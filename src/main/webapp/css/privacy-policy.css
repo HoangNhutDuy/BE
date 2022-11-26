@@ -1,0 +1,38 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#content{
+    margin: auto;
+}
+#content .banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#content .banner .note{
+    position: absolute;
+    left: 8%;
+    color: #f2f2f2;
+    font-size: 4rem;
+    font-weight: 900;
+    user-select: none;
+}
+#content section .title p{
+    color: #666;
+}
+#content section{
+    width: 60%;
+    margin: 3rem auto;
+}
+#content section .title{
+    margin: 4rem 1.6rem;
+}
+#content section .title h3{
+    font-size: 1.2rem;
+}

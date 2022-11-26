@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <a class="navbar-brand" href="../index.jsp">
+                    <i class="fas fa-film mr-2"></i>
+                    Catalog-Z
+                </a>
+                <div class="admin_info">
+                    <div class="img_admin">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                            alt="">
+                    </div>
+                    <h3>Người quản lý</h3>
+                </div>
+            </div>
+            <div class="sidebar">
+
+                <a href="#" class="homepage">
+                    <i class="fa-sharp fa-solid fa-house"></i>
+                    <h3>Trang chủ</h3>
+                </a>
+                <a href="#" class="category">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h3>Quản trị danh mục</h3>
+                </a>
+                <a href="#" class="interface">
+                    <i class="fa-solid fa-list-check"></i>
+                    <h3>Quản lý giao diện</h3>
+                </a>
+                <a href="#" class="product_management">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h3>Quản lý sản phẩm</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <h3>Đăng xuất</h3>
+                </a>
+            </div>
+        </aside>
+        <div class="main">
+
+        </div>
+        <script>
+            const main = document.querySelector('.main');
+            const category = document.querySelector('.category');
+            const interface = document.querySelector('.interface');
+            const productManagement = document.querySelector('.product_management');
+            const parts = document.querySelectorAll('.sidebar a');
+            const homepage = document.querySelector('.homepage')
+
+            Array.from(parts);
+            parts[0].classList.add('active')
+            for (let i = 0; i < parts.length; i++) {
+                parts[i].addEventListener('click', function () {
+
+                    let j = 0
+                    while (j < parts.length) {
+                        parts[j++].classList.remove('active')
+                    }
+                    parts[i].classList.add('active');
+                })
+            }
+            function render() {
+                main.innerHTML = `
+            <form action="" class="form-control">
+                <h1>Thông tin của admin</h1>
+                <div class="product">
+                    <label for="">Tên: </label>
+                    <input type="text" value="Hoàng Nhựt Duy" readonly>
+                </div>
+
+                <div class="product">
+                    <label for="">Email: </label>
+                    <input type="email" value="20130238@st.hcmuaf.edu.vn" readonly>
+                </div>
+                <div class="gender_input">
+                    <label for="">Giới tính: </label>
+                    <div class="gender">
+                        <input type="radio" name="gender" checked="true" readonly>
+                        <p>Nam</p>
+                        <input type="radio" name="gender" id="" readonly>
+                        <p>Nữ</p>
+                    </div>
+
+                </div>
+                <div class="product">
+                    <label for="">Ngày sinh: </label>
+                    <input type="text"value="03/04/2002" readonly>
+                </div>
+             
+            </form>`
+            }
+            render();
+            homepage.addEventListener('click', function () {
+                main.innerHTML = `
+            <form action="" class="form-control">
+                <h1>Thông tin của admin</h1>
+                <div class="product">
+                    <label for="">Tên: </label>
+                    <input type="text" value="Hoàng Nhựt Duy" readonly>
+                </div>
+
+                <div class="product">
+                    <label for="">Email: </label>
+                    <input type="email" value="20130238@st.hcmuaf.edu.vn" readonly>
+                </div>
+                <div class="gender_input">
+                    <label for="">Giới tính: </label>
+                    <div class="gender">
+                        <input type="radio" name="gender" checked="true" readonly>
+                        <p>Nam</p>
+                        <input type="radio" name="gender" id="" readonly>
+                        <p>Nữ</p>
+                    </div>
+
+                </div>
+                <div class="product">
+                    <label for="">Ngày sinh: </label>
+                    <input type="text"value="03/04/2002" readonly>
+                </div>
+             
+            </form>`
+            })
+            category.addEventListener('click', () => {
+                main.innerHTML = `<form action="" class="form-control">
+                <h1>Thông tin chung</h1>
+                <div class="product">
+                    <label for="">Mã danh mục: </label>
+                    <input type="text">
+                </div>
+                <div class="product">
+                    <label for="">Tên danh mục: </label>
+                    <input type="text">
+                </div>
+
+                <div class="product">
+                    <label for="">Ảnh: </label>
+                    <input type="file" style ="margin-left: 10rem;">
+                </div>
+              
+             
+                <div class="product">
+                    <label for="">Mô tả: </label>
+                    <input type="text">
+                </div>
+                <div class="confirm">
+                    <input type="submit" value="Xác nhận" class="confirm_input">
+                </div>
+            </form>`
+            })
+            interface.addEventListener('click', function () {
+                main.innerHTML = `     <form action="" class="form-control">
+                <h1>Cài đặt</h1>
+
+                <div class="interface_settings">
+                    <h3>Đổi màu giao diện: </h3>
+                    <input type="color" style="width: 63%;">
+                </div>
+                <div class="interface_settings">
+                    <h3>Đổi logo: </h3>
+                    <input type="file" style="padding: 0rem 0.5rem;">
+                </div>
+                <div class="interface_settings">
+                    <h3>Đổi thông tin nhóm: </h3>
+                    <input type="text" style="padding: 0rem 0.5rem;">
+                </div>
+        </div>
+        </form>`
+            })
+            productManagement.addEventListener('click', () => {
+                main.innerHTML = `  <div class="container_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Danh mục</th>
+                            <th>Tiêu đề</th>
+                            <th>Ảnh</th>
+                            <th>Nổi bật</th>
+                            <th>Mới</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Trái tim</td>
+                            <td>Hộp quà hình trái tim</td>
+                            <td>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                                    alt="">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <a href="#">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>2</td>
+                            <td>Trái tim</td>
+                            <td>Hộp quà hình trái tim</td>
+                            <td>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                                    alt="">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <a href="#">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td>Trái tim</td>
+                            <td>Hộp quà hình trái tim</td>
+                            <td>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                                    alt="">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <a href="#">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>Trái tim</td>
+                            <td>Hộp quà hình trái tim</td>
+                            <td>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                                    alt="">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <a href="#">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>5</td>
+                            <td>Trái tim</td>
+                            <td>Hộp quà hình trái tim</td>
+                            <td>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                                    alt="">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <a href="#">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>6</td>
+                            <td>Trái tim</td>
+                            <td>Hộp quà hình trái tim</td>
+                            <td>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
+                                    alt="">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <a href="#">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="add_product">
+                <button class="add-product" onclick = "addProduct()">Thêm sản phẩm</button>
+            </div>`
+
+            })
+            function addProduct() {
+                main.innerHTML = ` <form action="" class="form-control">
+                <h1>Thông tin sản phẩm</h1>
+                <div class="product">
+                    <label for="">Mã sản phẩm: </label>
+                    <input type="text">
+                </div>
+                <div class="product">
+                    <label for="">Tên sản phẩm: </label>
+                    <input type="text">
+                </div>
+                <div class="product">
+                    <label for="">Mã danh mục: </label>
+                    <input type="text">
+                </div>
+                <div class="product">
+                    <label for="">Tên danh mục: </label>
+                    <input type="text">
+                </div>
+                <div class="product">
+                    <label for="">Ảnh: </label>
+                    <input type="file" style ="margin-left: 10rem;">
+                </div>
+              
+                
+                <div class="product">
+                    <label for="">Giá: </label>
+                    <input type="text">
+                </div>
+                <div class="product">
+                    <label for="">Mô tả: </label>
+                    <input type="text">
+                </div>
+                <div class="confirm">
+                    <input type="submit" value="Xác nhận" class="confirm_input" >
+                </div>
+            </form>`;
+            }
+        </script>
+</body>
+
+</html>

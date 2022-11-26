@@ -1,0 +1,271 @@
+* {
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+:root {
+    --color-light: rgba(132, 139, 200, 0.18);
+
+}
+
+.container .top {
+    background-color: white;
+}
+
+.container .top>a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 2rem;
+    color: #3399CC;
+    outline: none;
+    padding: 2rem 1rem;
+
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+}
+
+.navbar-brand i {
+    margin-right: 1rem;
+
+}
+
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #B1B7C1;
+    position: relative;
+    margin: 1rem 0;
+}
+
+aside {
+    height: 100vh;
+    /* background-color: gray; */
+}
+
+.admin_info {
+    display: flex;
+    margin-left: 0.5rem;
+    margin-top: 3rem;
+    align-items: center;
+    color: #B1B7C1;
+    font-size: 1.5rem;
+}
+
+.img_admin {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.6rem;
+}
+
+.img_admin img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+}
+
+.container .sidebar a {
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+    align-items: center;
+    margin-left: 2rem;
+    transform: all 300ms ease;
+    height: 3rem;
+    outline: none;
+}
+
+.container .top,
+.container .sidebar {
+    width: 110%;
+    background-color: #3C4B64;
+}
+
+.container .sidebar a.active {
+    margin-left: 0;
+    background-color: var(--color-light);
+    color: white;
+}
+
+.container .sidebar a.active:before {
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    background-color: #000;
+}
+
+.container .sidebar i {
+    transition: 0.5s ease;
+}
+
+.container .sidebar a:active::before i {
+    margin-left: calc(1rem- 0.5rem);
+}
+
+.container .sidebar a:hover i {
+    margin-left: 1rem;
+}
+
+.container .sidebar a:last-child {
+    margin-top: 5rem;
+}
+
+.main {
+    width: 120vh;
+}
+
+.main h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.main .form-control {
+    margin: 3rem 8rem;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 1.5rem;
+}
+
+.product {
+    display: flex;
+    margin: 2rem 0;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.product label {
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.product input {
+    width: 65%;
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    font-size: 1.0rem;
+}
+
+.confirm {
+    text-align: center;
+}
+
+.confirm_input {
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+}
+
+.interface_settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.interface_settings h3 {
+    margin-right: 3rem;
+}
+
+.interface_settings input {
+    outline: none;
+    width: 60%;
+}
+
+.container_table {
+    height: 550px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.container_table::-webkit-scrollbar {
+    width: 0.1rem;
+}
+
+.main table {
+    margin: 2rem auto;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    /* width: 100%; */
+}
+
+.main table img {
+    width: 6rem;
+    height: 6em;
+}
+
+.main table th,
+.main table td {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border: 1px solid #000;
+
+}
+
+.main table a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.gender_input{
+    display: flex;
+    margin: 2rem 0;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: sans-serif;
+}
+.gender_input label{
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: bold;
+}
+.gender {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 7.5rem;
+}
+.add_product{
+   text-align: center;
+}
+.add_product button{
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    color: white;
+    background-color: #009999;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: 0.5s ease;
+}
+.add_product button:hover{
+    background-color:#086969;
+}
+

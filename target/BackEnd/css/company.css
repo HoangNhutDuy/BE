@@ -1,0 +1,48 @@
+.content__aboutus{
+    margin: 50px;
+}
+
+h3{
+    margin-bottom: 20px;
+}
+
+.banner__image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.banner__image img{
+    width: 100%;
+    height: 100%;
+}
+
+.banner__image h2{
+    position: absolute;
+    color: white;
+}
+
+.content--img {
+    display: flex;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.content--img img {
+    /* border-radius: 50%; */
+
+}
+
+.content--img > div {
+    margin: 20px;
+}
+
+.change {
+    flex-direction: row-reverse;
+}
+
+#footer{
+    margin-top: 50px;
+}
