@@ -82,7 +82,7 @@
 					</div>
 
 					<div class="register_here">
-						<p>Chưa có tài khoản? Bạn có thể tạo tài khoản <a href="register.html" style="color: #0093E9; text-decoration: underline;">tại đây</a></p>
+						<p>Chưa có tài khoản? Bạn có thể tạo tài khoản <a href="register.jsp" style="color: #0093E9; text-decoration: underline;">tại đây</a></p>
 					</div>
 					
 				</form>
