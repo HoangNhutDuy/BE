@@ -30,7 +30,7 @@ headerWeb.innerHTML = `
                         <button class="nav-link nav-link-5"><a href="login.jsp">Đăng nhập</a></button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link nav-link-6"><a href="register.html">Đăng ký</a></button>
+                        <button class="nav-link nav-link-6"><a href="register.jsp">Đăng ký</a></button>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.user != null}">

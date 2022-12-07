@@ -19,7 +19,7 @@ public class LoginControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("pass");
-        DAO dao = new DAO();
+        DAO dao = DAO.getInstance();
         User user = dao.checkLogin(username,password);
         if(user == null){
             response.sendRedirect("login.jsp");
