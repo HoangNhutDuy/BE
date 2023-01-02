@@ -12,11 +12,12 @@ import java.util.List;
 
 @WebServlet(value = "/SearchControl")
 public class SearchControl extends HttpServlet {
+    DAO dao = DAO.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String txtSearch = request.getParameter("txtSearch");
         int index = Integer.parseInt(request.getParameter("index"));
-        DAO dao = DAO.getInstance();
+
         int count = dao.count(txtSearch);
         final int pageSize = 6;
         int end = count/pageSize;
@@ -36,7 +37,6 @@ public class SearchControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String txtSearch = request.getParameter("txtSearch");
         final int index = 1;
-        DAO dao = DAO.getInstance();
         int count = dao.count(txtSearch);
         final int pageSize = 6;
         int end = count/pageSize;

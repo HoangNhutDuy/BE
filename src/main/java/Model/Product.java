@@ -59,6 +59,14 @@ public class Product implements Serializable {
         this.description = description;
     }
 
+    public String getNameCate() {
+        return nameCate;
+    }
+
+    public void setNameCate(String nameCate) {
+        this.nameCate = nameCate;
+    }
+
     @Override
     public String toString() {
         return "Product{" +

@@ -35,14 +35,14 @@ headerWeb.innerHTML = `
                 </c:if>
                 <c:if test="${sessionScope.user != null}">
                     <li class="nav-item">
-
+                        <a class="nav-link" href="logOut">Log out</a>
                         <p class="nav-link">Xin chao ban ${sessionScope.user.username}</p>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-8" href="wishlist.jsp"><i class="fa-solid fa-heart"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-7" href="shopping-cart.html"><i
+                        <a class="nav-link nav-link-7" href="/CartController?action=show"><i
                                 class="fa-solid fa-cart-shopping"></i></a>
                     </li>
                 </c:if>

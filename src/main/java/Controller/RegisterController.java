@@ -1,6 +1,7 @@
 package Controller;
 
 import DAO.DAO;
+import org.jetbrains.annotations.NotNull;
 import services.UserService;
 
 import javax.servlet.*;
@@ -17,7 +18,7 @@ public class RegisterController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("your-email");
         try {
             if(UserService.emailExists(email))
