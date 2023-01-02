@@ -1,6 +1,8 @@
 package DAO;
 
 import DB.DBConnect;
+import Model.Category;
+import Model.Product;
 import Model.User;
 import services.Checking;
 
@@ -8,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DAO {
     Connection connection = null;
@@ -22,12 +26,13 @@ public class DAO {
         return instance;
     }
 
-    public User checkLogin(String username, String password) {
+
+        public User checkLogin(String Username, String password){
 
         try {
-            String query = "SELECT * FROM USER WHERE username =  ? and password = ?";
+            String query = "SELECT * FROM Account WHERE Email =  ? and password = ?";
             ps = getPrepareStatement(query);
-            ps.setString(1, username);
+            ps.setString(1, Username);
             ps.setString(2, password);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -39,6 +44,7 @@ public class DAO {
         }
         return null;
     }
+
 
     public PreparedStatement getPrepareStatement(String query) throws SQLException {
         connection = DBConnect.getInstance().getConnection();
@@ -55,5 +61,64 @@ public class DAO {
         ps.execute();
         ps.close();
     }
+    public List<Category> loadCategory() {
 
+        try {
+            List<Category> categories = new ArrayList<>();
+            String sql = "SELECT * FROM CATEGORY";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                categories.add(new Category(rs.getString("IDCATE"), rs.getString("NAMECATE")
+                        , rs.getString("IMG_CATE"), rs.getString("DESCRIPTION")));
+            }
+
+            return categories;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+    public List<Product> getProductbyCategory(String id) {
+        try {
+            List<Product> products = new ArrayList<>();
+            String sql = "SELECT * FROM PRODUCT WHERE IDCATE = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(rs.getString("IDPRODUCT"),
+                        rs.getString("NAME_PRODUCT"), rs.getString("PRODUCT_IMG"),
+                        rs.getLong("PRICE"),
+                        rs.getString("DESCRIPTION"), rs.getString("NAMECATE")));
+            }
+            return products;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public Product getProductbyId(String id) {
+
+        try {
+            String sql = "SELECT * FROM PRODUCT WHERE IDPRODUCT= ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = null;
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getString("IDPRODUCT"), rs.getString("NAME_PRODUCT")
+                        , rs.getString("PRODUCT_IMG"), rs.getLong("PRICE"), rs.getString("DESCRIPTION"),
+                        rs.getString("NAMECATE"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }
