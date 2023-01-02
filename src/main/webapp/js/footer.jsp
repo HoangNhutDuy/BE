@@ -1,4 +1,5 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 const footer = document.querySelector('footer#footer')
 footer.innerHTML = `  <div class="container-fluid tm-container-small">

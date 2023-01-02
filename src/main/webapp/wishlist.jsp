@@ -151,7 +151,7 @@
     </footer>
     <script src="js/plugins.js"></script>
     <script src="js/header.jsp"></script>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.jsp"></script>
     <script src="js/loader.js"></script>
     <script>
         $(window).on("load", function () {
