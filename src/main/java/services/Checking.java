@@ -10,7 +10,7 @@ public class Checking {
 
     public static boolean emailExist(String email) throws SQLException {
         try{
-            String query = "select email from accounts where email = ? ";
+            String query = "select email from account where email = ? ";
             PreparedStatement ps = dao.getPrepareStatement(query);
             ps.setString(1,email);
             ResultSet rs = ps.executeQuery();

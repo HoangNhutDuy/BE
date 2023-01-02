@@ -32,7 +32,7 @@
 </div>
 <div class="page-content">
     <div class="form-v5-content">
-        <form class="form-detail" action="#" method="post">
+        <form class="form-detail" action="/registerControl" method="post">
             <h2>Đăng ký</h2>
             <div class="form-row">
                 <label for="full-name">Họ và tên</label>
@@ -66,13 +66,13 @@
         $('body').addClass('loaded');
     });
 </script>
-<script>
-    var form = document.querySelector('.form-detail');
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        swal("Chúc mừng", "Bạn đã đăng ký thành công!!!", "success")
-    })
-</script>
+<%--<script>--%>
+<%--    var form = document.querySelector('.form-detail');--%>
+<%--    form.addEventListener('submit', function (e) {--%>
+<%--        e.preventDefault();--%>
+<%--        swal("Chúc mừng", "Bạn đã đăng ký thành công!!!", "success")--%>
+<%--    })--%>
+<%--</script>--%>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 

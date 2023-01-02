@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@WebServlet(name = "RegisterController", value = "/register")
+@WebServlet(name = "RegisterController", value = "/registerControl")
 public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,15 +19,10 @@ public class RegisterController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String fullName = request.getParameter("full-name");
-//        if(fullName.length() < 10){
-//            request.setAttribute("fullName","your full name is too short!");
-//            request.getRequestDispatcher("register.jsp").forward(request,response);
-//        }
-
         String email = request.getParameter("your-email");
         try {
             if(Checking.emailExist(email))
+                // add message css
                 request.getRequestDispatcher("register.jsp").forward(request, response);
 
             else {
