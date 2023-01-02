@@ -22,10 +22,9 @@
 
     </div>
     <header id="header"></header>
-    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll"
-        data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form">
-            <input class="form-control tm-search-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
+    <div class="tm-hero d-flex justify-content-center align-items-center"  data-parallax="scroll" data-image-src="img/hero.jpg">
+        <form class="d-flex tm-search-form" action="SearchControl?index=1" method="post">
+            <input name="txtSearch" class="form-control tm-search-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
