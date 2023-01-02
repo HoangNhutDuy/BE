@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
@@ -30,118 +31,43 @@
     <div class="container">
         <div class="cart_page">
             <table class="table-product">
-                <tr>
-                    <th>Sản phẩm</th>
-                    <th>Giá tiền</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="product_details">
-                            <div class="product_img">
-                                <img src="img/img-05.jpg" alt="">
-                            </div>
-                            <div class="product_info">
-                                <p>Hangers</p>
-                                <small>Giá: 50000VND</small>
-                                <br>
-                                <a href="#" class="remove">Xóa</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        50000VND
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="product_details">
-                            <div class="product_img">
-                                <img src="img/img-05.jpg" alt="">
-                            </div>
-                            <div class="product_info">
-                                <p>Hangers</p>
-                                <small>Giá: 50000VND</small>
-                                <br>
-                                <a href="#" class="remove">Xóa</a>
+                <tr><th>Sản phẩm</th><th>Giá tiền</th></tr>
 
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        50000VND
-                    </td>
-                </tr>
+                <c:forEach var="product" items="${productList}">
                 <tr>
                     <td>
                         <div class="product_details">
                             <div class="product_img">
-                                <img src="img/img-05.jpg" alt="">
+                                <img src="<c:out value="${product.getImg()}"/>"  alt="image">
                             </div>
                             <div class="product_info">
-                                <p>Hangers</p>
-                                <small>Giá: 50000VND</small>
+                                <p><c:out value="${product.getNameCate()}"/></p>
+                                <small>Giá: <c:out value="${product.getPrice()}"/> VND</small>
                                 <br>
                                 <a href="#" class="remove">Xóa</a>
                             </div>
                         </div>
                     </td>
                     <td>
-                        50000VND
-                    </td>
-                <tr>
-                    <td>
-                        <div class="product_details">
-                            <div class="product_img">
-                                <img src="img/img-05.jpg" alt="">
-                            </div>
-                            <div class="product_info">
-                                <p>Hangers</p>
-                                <small>Giá: 50000VND</small>
-                                <br>
-                                <a href="#" class="remove">Xóa</a>
-
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        50000VND
+                        <c:out value="${product.getPrice()}"/> VND
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="product_details">
-                            <div class="product_img">
-                                <img src="img/img-05.jpg" alt="">
-                            </div>
-                            <div class="product_info">
-                                <p>Hangers</p>
-                                <small>Giá: 50000VND</small>
-                                <br>
-                                <a href="#" class="remove">Xóa</a>
-
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        50000VND
-                    </td>
-                </tr>
-                </tr>
+                </c:forEach>
             </table>
         </div>
         <div class="total_price">
             <table>
                 <tr>
                     <td>Thành tiền</td>
-                    <td>150000VND</td>
+                    <td>${sessionScope.cart.getTotalPrice()} VND</td>
                 </tr>
                 <tr>
                     <td>Thuế</td>
-                    <td>2500VND</td>
+                    <td>${sessionScope.cart.getTax()} VND</td>
                 </tr>
                 <tr>
                     <td>Tổng tiền</td>
-                    <td>152000VND</td>
+                    <td>${sessionScope.cart.getAfterTaxes()} VND</td>
                 </tr>
             </table>
         </div>

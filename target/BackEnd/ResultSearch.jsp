@@ -1,3 +1,4 @@
+<%@ page import="Model.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -30,13 +31,14 @@
     </form>
 </div>
 <div class="container">
+
         <c:forEach var="p" items="${result}">
         <div class="product">
             <img src="${p.img}" alt="" class="product_img">
             <div class="product_header">
                 <button><a href="PhotoDetailControl?id=${p.id}" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
                 <button class="heart"><i class="fa-regular fa-heart"></i></button>
-                <button><i class="fa-solid fa-plus"></i></button>
+                <button><a href="/CartController?action=add&id=${p.id}"><i class="fa-solid fa-plus"></i></a></button>
             </div>
         </div>
         </c:forEach>
