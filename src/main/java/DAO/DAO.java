@@ -1,10 +1,12 @@
 package DAO;
 
 import DB.DBConnect;
+
 import Model.Category;
 import Model.Product;
 import Model.User;
-import services.Checking;
+import services.UserService;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,34 +28,14 @@ public class DAO {
         return instance;
     }
 
-
-        public User checkLogin(String Username, String password){
-
-        try {
-            String query = "SELECT * FROM Account WHERE Email =  ? and password = ?";
-            ps = getPrepareStatement(query);
-            ps.setString(1, Username);
-            ps.setString(2, password);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                return new User(rs.getInt("idAccount"), rs.getString("Email")
-                        , rs.getString("Password"),rs.getString("FullName"));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
-    }
-
-
     public PreparedStatement getPrepareStatement(String query) throws SQLException {
         connection = DBConnect.getInstance().getConnection();
         return connection.prepareStatement(query);
     }
 
     public void addAccount(String email, String password, String fullName) throws SQLException {
-        if(Checking.emailExist(email)) return;
-        String query = "insert into account (Email,Password,role,FullName) values (?,?,0    ,?);";
+        if(UserService.emailExists(email)) return;
+        String query = "insert into account (Email,Password,role,FullName) values (?,?,0,?);";
         ps = getPrepareStatement(query);
         ps.setString(1,email);
         ps.setString(2,password);
