@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnect {
     String url = "jdbc:mysql://localhost:3306/backend";
     String user = "root";
-    String pass = "root";
+    String pass = "";
     Connection connection;
     static
     DBConnect instance;
