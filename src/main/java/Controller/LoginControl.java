@@ -2,11 +2,15 @@ package Controller;
 
 import DAO.DAO;
 import Model.User;
+import services.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @WebServlet(name = "LoginControl", value = "/LoginControl")
@@ -18,16 +22,30 @@ public class LoginControl extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        DAO dao = DAO.getInstance();
-        User user = dao.checkLogin(username,password);
-        if(user == null){
-            response.sendRedirect("login.jsp");
-        } else{
-            HttpSession session = request.getSession();
-            session.setAttribute("user",user);
-            request.getRequestDispatcher("index.jsp").forward(request,response);
+        Map<String,String> messages = new HashMap<>();
+
+        if (email == null || email.isEmpty()) {
+            messages.put("username", "Please enter username");
+        }
+
+        if (password == null || password.isEmpty()) {
+            messages.put("password", "Please enter password");
+        }
+
+        if(messages.isEmpty()) {
+            try {
+                if (UserService.emailExists(email)) {
+                    response.sendRedirect("login.jsp");
+                } else {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("user",null);
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

@@ -1,13 +1,12 @@
 package Controller;
 
 import DAO.DAO;
-import services.Checking;
+import services.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 @WebServlet(name = "RegisterController", value = "/registerControl")
@@ -21,7 +20,7 @@ public class RegisterController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("your-email");
         try {
-            if(Checking.emailExist(email))
+            if(UserService.emailExists(email))
                 // add message css
                 request.getRequestDispatcher("register.jsp").forward(request, response);
 
