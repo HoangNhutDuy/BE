@@ -26,25 +26,22 @@ public class LoginControl extends HttpServlet {
         String password = request.getParameter("password");
         Map<String,String> messages = new HashMap<>();
 
-        if (email == null || email.isEmpty()) {
-            messages.put("username", "Please enter username");
-        }
-
-        if (password == null || password.isEmpty()) {
-            messages.put("password", "Please enter password");
-        }
+//        if (email == null || email.isEmpty()) {
+//            messages.put("username", "Please enter username");
+//        }
+//
+//        if (password == null || password.isEmpty()) {
+//            messages.put("password", "Please enter password");
+//        }
 
         if(messages.isEmpty()) {
-            try {
-                if (UserService.emailExists(email)) {
-                    response.sendRedirect("login.jsp");
-                } else {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("user",null);
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+            User user = UserService.findUser(email,password);
+            if (user != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("user",user);
+                response.sendRedirect("index.jsp");
+            } else {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }
     }

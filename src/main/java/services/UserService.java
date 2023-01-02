@@ -7,21 +7,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserService extends Services{
-    public static User findUser(String username, String password){
+    public static User findUser(String email, String password) {
         try {
-            String query = "SELECT * FROM USER WHERE Email =  ? and Password = ?";
+            String query = "SELECT * FROM Account WHERE Email =  ? and Password = ?";
             PreparedStatement ps;
             ps = dao.getPrepareStatement(query);
-            ps.setString(1, username);
+            ps.setString(1, email);
             ps.setString(2, password);
             ResultSet rs;
             rs = ps.executeQuery();
-            while (rs.next()) {
+            if (rs.next())
                 return new User(rs.getInt("idAccount"), rs.getString("Email")
-                        , rs.getString("Password"),rs.getString("FullName"));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+                        , rs.getString("Password"), rs.getString("FullName"));
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
         }
         return null;
     }

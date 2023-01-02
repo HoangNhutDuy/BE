@@ -153,7 +153,7 @@
     <footer id="footer" class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
         <script src="js/plugins.js"></script>
         <script src="js/header.jsp"></script>
-        <script src="js/footer.js"></script>
+        <script src="js/footer.jsp"></script>
         <script>
             $(window).on("load", function () {
                 $('body').addClass('loaded');
