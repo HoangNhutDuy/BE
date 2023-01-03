@@ -18,7 +18,7 @@ public class UserService extends Services{
             rs = ps.executeQuery();
             if (rs.next())
                 return new User(rs.getInt("idAccount"), rs.getString("Email")
-                        , rs.getString("Password"), rs.getString("FullName"));
+                        , rs.getString("Password"), rs.getString("FullName"),rs.getInt("Role"));
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }

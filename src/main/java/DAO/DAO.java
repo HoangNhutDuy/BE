@@ -80,7 +80,7 @@ public class DAO {
                 products.add(new Product(rs.getString("IDPRODUCT"),
                         rs.getString("NAME_PRODUCT"), rs.getString("PRODUCT_IMG"),
                         rs.getLong("PRICE"),
-                        rs.getString("DESCRIPTION"), rs.getString("NAMECATE")));
+                        rs.getString("DESCRIPTION"), rs.getString("NAMECATE"),rs.getString("IDCATE")));
             }
             return products;
         } catch (SQLException e) {
@@ -101,7 +101,7 @@ public class DAO {
             while (rs.next()) {
                 return new Product(rs.getString("IDPRODUCT"), rs.getString("NAME_PRODUCT")
                         , rs.getString("PRODUCT_IMG"), rs.getLong("PRICE"), rs.getString("DESCRIPTION"),
-                        rs.getString("NAMECATE"));
+                        rs.getString("NAMECATE"),rs.getString("IDCATE"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -142,7 +142,7 @@ public class DAO {
             while (rs.next()) {
                 products.add(new Product(rs.getString("IDPRODUCT"), rs.getString("NAMECATE")
                         , rs.getString("PRODUCT_IMG"), rs.getLong("PRICE"), rs.getString("DESCRIPTION")
-                        , rs.getString("NAMECATE")));
+                        , rs.getString("NAMECATE"),rs.getString("IDCATE")));
             }
             return products;
         } catch (SQLException e) {
