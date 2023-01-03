@@ -166,7 +166,7 @@
                             <td>
                                 <a href="DeleteCategory?id=${c.idCate}">Xóa</a>
                                      <br>
-                                <a href "#">Chỉnh sửa </a>
+                             <a href="LoadCatebyID?id=${c.idCate}">Chỉnh sửa </a>
                             </td>
                         </tr>
                     </tbody>
@@ -211,7 +211,7 @@
                             <td>
                                 <a href="DeleteUser?id=${u.id}">Xóa</a>
                                      <br>
-                                <a href "#">Chỉnh sửa </a>
+                                <a href="LoadUserbyID?id=${u.id}">Chỉnh sửa </a>
                             </td>
                         </tr>
                     </tbody>
@@ -251,7 +251,7 @@
                             <td>
                                 <a href="DeleteProduct?id=${p.id}">Xóa</a>
                                 <br>
-                                <a href="#">Chỉnh sửa</a>
+                                <a href="LoadProductbyID?id=${p.id}">Chỉnh sửa</a>
                             </td>
                         </tr>
                     </tbody>
