@@ -194,14 +194,8 @@ public class DAO {
 
     public static void main(String[] args) {
         DAO dao = DAO.getInstance();
-//        List<Product> products = dao.getAllProduct();
-//        for (Product p : products) {
-//            System.out.println(p);
-//        }
-        List<User> users = dao.getAllUser();
-        for(User u : users){
-            System.out.println(u);
-        }
+        User user = dao.getUserbyID(1);
+        System.out.println(user);
     }
 
     public void addProduct(String idProduct, String nameProduct, String idCategory, String nameCategory, String imgProduct, double price, String descProduct) {
@@ -281,5 +275,92 @@ public class DAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public Category getCategorybyID(String id){
+        try {
+            String sql = "SELECT * FROM CATEGORY WHERE IDCATE = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = null;
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Category(rs.getString("IDCATE"),rs.getString("NAMECATE")
+                ,rs.getString("IMG_CATE"),rs.getString("DESCRIPTION"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+    public void editCategory(String id,String name, String img, String desc){
+        try {
+            String sql = "UPDATE CATEGORY set NAMECATE = ?,IMG_CATE = ?, DESCRIPTION = ? WHERE IDCATE = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1,name);
+            ps.setString(2,img);
+            ps.setString(3,desc);
+            ps.setString(4,id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+    public void editProduct(String nameProduct, String nameCategory, String imgProduct, double price, String descProduct,String idProduct) {
+        try {
+            String sql = "UPDATE PRODUCT set NAMECATE = ?,NAME_PRODUCT = " +
+                    "?, PRODUCT_IMG = ?,PRICE = ?, DESCRIPTION = ? WHERE IDPRODUCT = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1,nameCategory);
+            ps.setString(2,nameProduct);
+            ps.setString(3,imgProduct);
+            ps.setDouble(4,price);
+            ps.setString(5,descProduct);
+            ps.setString(6,idProduct);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public User getUserbyID(int id){
+        try {
+            String sql = "SELECT * FROM Account WHERE IDACCOUNT = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = null;
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                return new User(rs.getInt("IDACCOUNT"),rs.getString("EMAIL")
+                ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+            return null;
+    }
+    public void editUserbyId(int id,String fullName,String email,String password,int role){
+        try {
+            String query = "UPDATE ACCOUNT set Email = ?,Password = ?, ROLE = ?, FULLNAME = ? " +
+                    "where idAccount = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1,email);
+            ps.setString(2,password);
+            ps.setInt(3,role);
+            ps.setString(4,fullName);
+            ps.setInt(5,id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
