@@ -5,7 +5,7 @@ const headerWeb = document.querySelector("#header");
 headerWeb.innerHTML = `
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.jsp">
+        <a class="navbar-brand" href="HomeControl">
             <i class="fas fa-film mr-2"></i>
             Catalog-Z
         </a>
@@ -16,7 +16,7 @@ headerWeb.innerHTML = `
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-1 active" aria-current="page" href="index.jsp">Hình ảnh</a>
+                    <a class="nav-link nav-link-1 active" aria-current="page" href="HomeControl">Hình ảnh</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-3" href="about.html">Thông tin</a>
@@ -26,6 +26,7 @@ headerWeb.innerHTML = `
                 </li>
 
                 <c:if test="${sessionScope.user == null}">
+
                     <li class="nav-item">
                         <button class="nav-link nav-link-5"><a href="login.jsp">Đăng nhập</a></button>
                     </li>
@@ -35,8 +36,14 @@ headerWeb.innerHTML = `
                 </c:if>
                 <c:if test="${sessionScope.user != null}">
                     <li class="nav-item">
-                        <a class="nav-link" href="logOut">Log out</a>
-                        <p class="nav-link">Xin chao ban ${sessionScope.user.username}</p>
+                        <a class="nav-link nav-link-4" href="#"> <img  style="width: 30px; height:30px; object-fit: cover; border-radius: 50%;" src="https://png.pngtree.com/element_our/20190604/ourmid/pngtree-user-avatar-boy-image_1482937.jpg" alt="Image" class = "avatar"></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link"> ${sessionScope.user.fullName}</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logOut">Đăng xuất</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-8" href="wishlist.jsp"><i class="fa-solid fa-heart"></i></a>
