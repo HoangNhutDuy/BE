@@ -80,11 +80,11 @@ public class Cart {
     }
 
     public static void main(String[] args) {
-        Product p1 = new Product("p1", "wooden", "abc", 3L, "no description", "123");
-        Product p2 = new Product("p2", "wooden", "abc", 4L, "no description", "123");
-        Product p3 = new Product("p3", "wooden", "abc", 5L, "no description", "123");
-        Product p4 = new Product("p4", "wooden", "abc", 6L, "no description", "123");
-        Product p5 = new Product("p1", "wooden", "abc", 7L, "no description", "123");
+        Product p1 = new Product("p1", "wooden", "abc", 3L, "no description", "123","1");
+        Product p2 = new Product("p2", "wooden", "abc", 4L, "no description", "123","1");
+        Product p3 = new Product("p3", "wooden", "abc", 5L, "no description", "123","1");
+        Product p4 = new Product("p4", "wooden", "abc", 6L, "no description", "123","1");
+        Product p5 = new Product("p1", "wooden", "abc", 7L, "no description", "123","1");
         Cart cart = new Cart();
         cart.addToCart(p1);
         cart.addToCart(p2);

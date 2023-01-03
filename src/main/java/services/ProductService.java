@@ -19,7 +19,7 @@ public class ProductService extends Services{
                     ,rs.getString("PRODUCT_IMG")
                     ,rs.getLong("PRICE")
                    ,rs.getString("DESCRIPTION")
-                    ,rs.getString("NAMECATE"));
+                    ,rs.getString("NAMECATE"),rs.getString("IDCATE"));
         }
         return product;
     }

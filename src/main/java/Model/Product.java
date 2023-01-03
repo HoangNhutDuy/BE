@@ -9,14 +9,16 @@ public class Product implements Serializable {
     private long price;
     String description;
     String nameCate;
+    String idCate;
 
-    public Product(String id, String name, String img, long price, String description, String nameCate) {
+    public Product(String id, String name, String img, long price, String description, String nameCate, String idCate) {
         this.id = id;
         this.name = name;
         this.img = img;
         this.price = price;
         this.description = description;
         this.nameCate = nameCate;
+        this.idCate = idCate;
     }
 
     public String getId() {
@@ -65,6 +67,14 @@ public class Product implements Serializable {
 
     public void setNameCate(String nameCate) {
         this.nameCate = nameCate;
+    }
+
+    public String getIdCate() {
+        return idCate;
+    }
+
+    public void setIdCate(String idCate) {
+        this.idCate = idCate;
     }
 
     @Override
