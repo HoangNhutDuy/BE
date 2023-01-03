@@ -4,14 +4,13 @@ import java.util.*;
 
 public class Cart {
     static Cart instance = null;
+    private static final double TAX = 0.05;
     private Map<String, Product> cart;
     int quantity;
     long totalPrice;
-    final double TAX = 0.05;
 
     private Cart() {
         cart = new HashMap<>();
-//        init();
     }
 
     public static Cart getInstance() {
@@ -24,18 +23,6 @@ public class Cart {
         cart.clear();
     }
 
-//    private void init(){
-//        Product p1 = new Product("p1", "wooden", "abc", 3L, "no description", "123");
-//        Product p2 = new Product("p2", "wooden", "abc", 4L, "no description", "123");
-//        Product p3 = new Product("p3", "wooden", "abc", 5L, "no description", "123");
-//        Product p4 = new Product("p4", "wooden", "abc", 6L, "no description", "123");
-//        Product p5 = new Product("p1", "wooden", "abc", 7L, "no description", "123");
-//        addToCart(p1);
-//        addToCart(p2);
-//        addToCart(p3);
-//        addToCart(p4);
-//        addToCart(p5);
-//    }
 
     public void addToCart(Product p) {
         if (cart.containsKey(p.getId())) return;
