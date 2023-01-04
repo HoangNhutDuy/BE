@@ -17,7 +17,8 @@ public class EditCategoryControl extends HttpServlet {
         String desc = request.getParameter("descCate");
         DAO dao = DAO.getInstance();
         dao.editCategory(id,name,imgCate,desc);
-        response.sendRedirect("AdminControl");
+        request.setAttribute("message","Cập nhật thành công");
+        request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 
     @Override

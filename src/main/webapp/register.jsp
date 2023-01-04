@@ -34,6 +34,9 @@
     <div class="form-v5-content">
         <form class="form-detail" action="/registerControl" method="post">
             <h2>Đăng ký</h2>
+            <c:if test="${message != null}">
+                <h3 style="color: red">${message}</h3>
+            </c:if>
             <div class="form-row">
                 <label for="full-name">Họ và tên</label>
                 <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Họ và tên"

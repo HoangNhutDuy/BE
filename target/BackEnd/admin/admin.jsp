@@ -47,7 +47,7 @@
                 <i class="fa-solid fa-user"></i>
                 <h3>Quản lý người dùng</h3>
             </a>
-            <a href="#">
+            <a href="logOut">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <h3>Đăng xuất</h3>
             </a>

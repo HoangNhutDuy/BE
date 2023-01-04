@@ -42,6 +42,7 @@ public class LoginControl extends HttpServlet {
                 session.setAttribute("cart", Cart.getInstance());
                 response.sendRedirect("HomeControl");
             } else {
+                request.setAttribute("message","Sai tài khoản hoặc mật khẩu");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }

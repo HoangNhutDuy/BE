@@ -23,7 +23,8 @@ public class EditUserControl extends HttpServlet {
         }
         DAO dao = DAO.getInstance();
         dao.editUserbyId(id,fullName,Email,password,role);
-        response.sendRedirect("AdminControl");
+        request.setAttribute("message","Cập nhật thành công");
+        request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 
     @Override
