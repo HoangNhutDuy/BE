@@ -28,8 +28,9 @@ https://templatemo.com/tm-556-catalog-z
     </div>
     <header id="header"></header>
 
+
     <div class="tm-hero d-flex justify-content-center align-items-center"  data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form" action="SearchControl?index=1">
+        <form class="d-flex tm-search-form" action="SearchControl?index=1" method="post">
             <input name="txtSearch" class="form-control tm-search-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
@@ -55,7 +56,7 @@ https://templatemo.com/tm-556-catalog-z
                     <img style="width: 314px; height: 210px" src="${o.img}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>${o.name}</h2>
-                        <a href="LoadProductControl?cateId=${o.idCate}">View more</a>
+                        <a href="LoadProductControl?id=${o.idCate}">View more</a>
                     </figcaption>                    
                 </figure>
             </div>
