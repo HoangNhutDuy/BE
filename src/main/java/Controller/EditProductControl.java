@@ -21,7 +21,8 @@ public class EditProductControl extends HttpServlet {
         String descProduct = request.getParameter("descProduct");
         DAO dao = DAO.getInstance();
         dao.editProduct(nameProduct,nameCategory,imgProduct,price,descProduct,idProduct);
-        response.sendRedirect("AdminControl");
+        request.setAttribute("message","Cập nhật thành công");
+        request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 
     @Override

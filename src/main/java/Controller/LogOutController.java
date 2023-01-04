@@ -15,7 +15,7 @@ public class LogOutController extends HttpServlet {
         session.removeAttribute("user");
         Cart cart = (Cart) session.getAttribute("cart");
         cart.removeAll();
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("HomeControl");
     }
 
     @Override
