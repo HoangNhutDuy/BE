@@ -1,6 +1,7 @@
 package Controller;
 
 import DAO.DAO;
+import Model.Category;
 import Model.Product;
 
 import javax.servlet.*;
@@ -14,10 +15,11 @@ import java.util.List;
 public class LoadProductControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> products = new ArrayList<>();
-        DAO dao = DAO.getInstance();
-        String id = request.getParameter("id");
-        products = dao.getProductbyCategory(id);
+        String cateId = request.getParameter("cateId");
+        List<Product> products = cateId == null ? (List<Product>) request.getSession().getAttribute("cateList")
+                : DAO.getInstance().getProductbyCategory(cateId);
+
+        request.getSession().setAttribute("cateList",products);
         request.setAttribute("listP", products);
         request.getRequestDispatcher("image-gallery.jsp").forward(request, response);
     }
