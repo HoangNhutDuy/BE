@@ -110,7 +110,7 @@ https://templatemo.com/tm-556-catalog-z
                             <button class="btn buy-btn">Mua</button>
                         </div>
                         <div class="to-cart">
-                            <button class="btn cart-btn">Thêm vào giỏ hàng</button>
+                            <button class="btn cart-btn"><a href="/PhotoDetailControl?id=${product.id}&page=detail">Thêm vào giỏ hàng</a></button>
                         </div>
                     </div>
                     <div id="text-center">

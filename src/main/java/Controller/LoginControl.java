@@ -1,6 +1,7 @@
 package Controller;
 
 import DAO.DAO;
+import Model.Cart;
 import Model.User;
 import services.UserService;
 
@@ -38,6 +39,7 @@ public class LoginControl extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user",user);
+                session.setAttribute("cart", Cart.getInstance());
                 response.sendRedirect("HomeControl");
             } else {
                 request.getRequestDispatcher("login.jsp").forward(request, response);

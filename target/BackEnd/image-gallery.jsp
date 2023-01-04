@@ -23,7 +23,7 @@
     </div>
     <header id="header"></header>
     <div class="tm-hero d-flex justify-content-center align-items-center"  data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form" action="SearchControl?index=1" method="post">
+        <form class="d-flex tm-search-form" action="SearchControl?index=1">
             <input name="txtSearch" class="form-control tm-search-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
@@ -35,9 +35,9 @@
             <div class="product">
                 <img src="${o.img}" alt="" class="product_img">
                 <div class="product_header">
-                    <button><a href="PhotoDetailControl?id=${o.id}" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
+                    <button><a href="PhotoDetailControl?productID=${o.id}" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
                     <button class="heart"><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-solid fa-plus"></i></button>
+                    <button><a href="/CartController?productID=${o.id}&action=add&page=gallery"><i class="fa-solid fa-plus"></i></a></button>
                 </div>
             </div>
         </c:forEach>
