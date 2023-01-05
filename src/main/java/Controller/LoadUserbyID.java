@@ -1,21 +1,22 @@
 package Controller;
 
-import Model.Cart;
+import DAO.DAO;
+import Model.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "LogOutController", value = "/logOut")
-public class LogOutController extends HttpServlet {
+@WebServlet(name = "LoadUserbyID", value = "/LoadUserbyID")
+public class LoadUserbyID extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.removeAttribute("user");
-        Cart cart = (Cart) session.getAttribute("cart");
-        cart.removeAll();
-        response.sendRedirect("HomeControl");
+        DAO dao = DAO.getInstance();
+        int id = Integer.parseInt(request.getParameter("id"));
+        User u = dao.getUserbyID(id);
+        request.setAttribute("user",u);
+        request.getRequestDispatcher("admin/editUser.jsp").forward(request,response);
     }
 
     @Override

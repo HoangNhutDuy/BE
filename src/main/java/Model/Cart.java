@@ -41,7 +41,7 @@ public class Cart {
     }
 
     public long getAfterTaxes() {
-        return getTotalPrice() - getTax();
+        return getTotalPrice() + getTax();
     }
 
     public int getQuantity() {

@@ -21,14 +21,13 @@ public class RegisterController extends HttpServlet {
     protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("your-email");
         try {
-            if(UserService.emailExists(email))
-                // add message css
+            if (UserService.emailExists(email)) {
+                request.setAttribute("message", "Email đã tồn tại");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
-
-            else {
+            } else {
                 String fullName = request.getParameter("full-name");
                 String password = request.getParameter("password");
-                DAO.getInstance().addAccount(email,password,fullName);
+                DAO.getInstance().addAccount(email, password, fullName);
                 response.sendRedirect("index.jsp");
             }
 
