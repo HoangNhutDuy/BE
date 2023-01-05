@@ -62,7 +62,7 @@
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 					<div class="forget-password">
-						<a href="forgot-password.html"><span>Quên mật khẩu ?</span></a>
+						<a href="forgot-password.jsp"><span>Quên mật khẩu ?</span></a>
 					</div>
 					<div class="container-login100-form-btn m-t-32">
 						<button class="login100-form-btn">

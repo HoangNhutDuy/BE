@@ -1,3 +1,6 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,91 +79,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var="p" items="${listP}">
                         <tr>
                             <td>
                                 <div class="product_info">
                                     <div class="product_img">
-                                        <img src="img/img-04.jpg" alt="">
+                                        <img src="${p.img}" alt="image">
                                     </div>
                                     <div class="product_name">
-                                        <p>Hangers</p>
+                                        <p>${p.idCate}</p>
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="product_price">
-                                    <p>50.000VND</p>
+                                    <p>${p.price}VND</p>
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div class="product_info">
-                                    <div class="product_img">
-                                        <img src="img/img-04.jpg" alt="">
-                                    </div>
-                                    <div class="product_name">
-                                        <p>Hangers</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="product_price">
-                                    <p>50.000VND</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product_info">
-                                    <div class="product_img">
-                                        <img src="img/img-04.jpg" alt="">
-                                    </div>
-                                    <div class="product_name">
-                                        <p>Hangers</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="product_price">
-                                    <p>50.000VND</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product_info">
-                                    <div class="product_img">
-                                        <img src="img/img-04.jpg" alt="">
-                                    </div>
-                                    <div class="product_name">
-                                        <p>Hangers</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="product_price">
-                                    <p>50.000VND</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product_info">
-                                    <div class="product_img">
-                                        <img src="img/img-04.jpg" alt="">
-                                    </div>
-                                    <div class="product_name">
-                                        <p>Hangers</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="product_price">
-                                    <p>50.000VND</p>
-                                </div>
-                            </td>
-                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
 
