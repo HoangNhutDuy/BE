@@ -19,40 +19,44 @@ import java.util.List;
 @WebServlet(name = "CartController", value = "/CartController")
 public class CartController extends HttpServlet {
     Cart cart = Cart.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String action = request.getParameter("action");
         String productID = request.getParameter("productID");
         String page = request.getParameter("page");
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
 
-        if(user == null){
+        if (user == null) {
             response.sendRedirect("login.jsp");
             return;
         }
 
         if ("remove".equals(action)) {
             cart.removeFromCart(productID);
-            updateCart(request,response);
-        }
-        else if (action.equals("add")) {
+            updateCart(request, response);
+        } else if (action.equals("add")) {
             try {
                 Product product = ProductService.findProduct(productID);
-                if (product != null){ cart.addToCart(product);}
-
-                if("gallery".equals(page) || "detail".equals(page)){
-                    request.getRequestDispatcher("/LoadProductControl").forward(request,response);
+                if (product != null) {
+                    cart.addToCart(product);
                 }
-                else if("resultSearch".equals(page)){
-                    request.getRequestDispatcher("/SearchControl").forward(request,response);
+
+                if ("gallery".equals(page) || "detail".equals(page)) {
+                    request.getRequestDispatcher("/LoadProductControl").forward(request, response);
+                } else if ("resultSearch".equals(page)) {
+                    request.getRequestDispatcher("/SearchControl").forward(request, response);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
 
-        } else if (action.equals("show")) {
-            updateCart(request,response);
+        } else if ("show".equals(action)) {
+            updateCart(request, response);
+        } else if ("pay".equals(action)) {
+            request.setAttribute("cart", cart);
+            request.getRequestDispatcher("form-payment.jsp").forward(request, response);
         }
 
 
