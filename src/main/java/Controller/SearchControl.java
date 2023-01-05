@@ -41,7 +41,6 @@ public class SearchControl extends HttpServlet {
         request.setAttribute("result", products);
         request.setAttribute("end", end);
         request.setAttribute("save", txtSearch);
-
         request.getSession().setAttribute("index", paramIndex);
         request.getSession().setAttribute("txtSearch", txtSearch);
 

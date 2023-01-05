@@ -72,7 +72,7 @@
             </table>
         </div>
         <div class="payment">
-            <button class="continue_buy_btn"><a style="text-decoration:  none; color: black" href="/HomeControl">Quay lại mua hàng</a></button>
+            <button class="continue_buy_btn"><a style="text-decoration: none; color: black" href="/HomeControl">Quay lại mua hàng</a></button>
             <button class="payment_btn" type="submit"><a href="form-payment.html">Thanh toán</a></button>
         </div>
     </div>
