@@ -44,7 +44,7 @@
                                 <p><c:out value="${product.getNameCate()}"/></p>
                                 <small>Giá: <c:out value="${product.getPrice()}"/> VND</small>
                                 <br>
-                                <a href="#" class="remove">Xóa</a>
+                                <a href="/CartController?action=remove&productID=${product.id}" class="remove">Xóa</a>
                             </div>
                         </div>
                     </td>
@@ -72,8 +72,8 @@
             </table>
         </div>
         <div class="payment">
-            <button class="continue_buy_btn">Quay lại mua hàng</button>
-            <button class="payment_btn" type="submit"><a href="/CartController?action=pay">Thanh toán</a></button>
+            <button class="continue_buy_btn"><a style="text-decoration:  none; color: black" href="/HomeControl">Quay lại mua hàng</a></button>
+            <button class="payment_btn" type="submit"><a href="form-payment.html">Thanh toán</a></button>
         </div>
     </div>
     <footer id="footer" class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
