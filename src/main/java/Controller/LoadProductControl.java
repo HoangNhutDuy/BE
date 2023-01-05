@@ -15,7 +15,7 @@ import java.util.List;
 public class LoadProductControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cateId = request.getParameter("cateId");
+        String cateId = request.getParameter("cateID");
         List<Product> products = cateId == null ? (List<Product>) request.getSession().getAttribute("cateList")
                 : DAO.getInstance().getProductbyCategory(cateId);
 
