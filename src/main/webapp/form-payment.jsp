@@ -68,7 +68,7 @@
         <div class="shopping-cart">
             <div class="topic">
                 <p class="title">Giỏ hàng</p>
-                <span>${listP.size()}</span>
+                <span>${cart.getQuantity()}</span>
             </div>
             <div class="table-product">
                 <table>
@@ -79,15 +79,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="p" items="${listP}">
+                    <c:forEach var="p" items="${cart.getProductList()}">
                         <tr>
                             <td>
                                 <div class="product_info">
                                     <div class="product_img">
                                         <img src="${p.img}" alt="image">
-                                    </div>
-                                    <div class="product_name">
-                                        <p>${p.idCate}</p>
                                     </div>
                                 </div>
                             </td>
@@ -104,7 +101,7 @@
             </div>
             <div class="total_price">
                 <p>Tổng thành tiền</p>
-                <p>250.000VND</p>
+                <p>${cart.getAfterTaxes()}VND</p>
             </div>
         </div>
         <script src="js/header.jsp"></script>
