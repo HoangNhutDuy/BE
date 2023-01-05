@@ -27,7 +27,6 @@ public class CartController extends HttpServlet {
         String productID = request.getParameter("productID");
         String page = request.getParameter("page");
         User user = (User)session.getAttribute("user");
-        System.out.println(user);
         if(user == null){
             response.sendRedirect("login.jsp");
             return;
@@ -38,14 +37,12 @@ public class CartController extends HttpServlet {
         else if (action.equals("add")) {
             try {
                 Product product = ProductService.findProduct(productID);
-                if (product != null){ cart.addToCart(product);
-                    System.out.println("ccai con cac");}// duy throw txt search
+                if (product != null){ cart.addToCart(product);}
 
-                if("gallery".equals(page)){
+                if("gallery".equals(page) || "detail".equals(page)){
                     request.getRequestDispatcher("/LoadProductControl").forward(request,response);
                 }
                 else if("resultSearch".equals(page)){
-
                     request.getRequestDispatcher("/SearchControl").forward(request,response);
                 }
             } catch (SQLException e) {

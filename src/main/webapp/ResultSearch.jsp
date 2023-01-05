@@ -36,9 +36,9 @@
         <div class="product">
             <img src="${p.img}" alt="" class="product_img">
             <div class="product_header">
-                <button><a href="PhotoDetailControl?id=${p.id}" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
+                <button><a href="PhotoDetailControl?productID=${p.id}" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
                 <button class="heart"><i class="fa-regular fa-heart"></i></button>
-                <button><a href="/CartController?action=add&id=${p.id}"><i class="fa-solid fa-plus"></i></a></button>
+                <button><a style="text-decoration: none; color: black" href="/CartController?action=add&productID=${p.id}&page=resultSearch"><i class="fa-solid fa-plus"></i></a></button>
             </div>
         </div>
         </c:forEach>

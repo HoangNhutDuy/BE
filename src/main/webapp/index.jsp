@@ -56,8 +56,8 @@ https://templatemo.com/tm-556-catalog-z
                     <img style="width: 314px; height: 210px" src="${o.img}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>${o.name}</h2>
-                        <a href="LoadProductControl?id=${o.idCate}">View more</a>
-                    </figcaption>                    
+                        <a href="LoadProductControl?cateID=${o.idCate}">View more</a>
+                    </figcaption>
                 </figure>
             </div>
             </c:forEach>
