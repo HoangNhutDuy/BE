@@ -18,21 +18,23 @@ import java.util.List;
 
 @WebServlet(name = "CartController", value = "/CartController")
 public class CartController extends HttpServlet {
-
+    Cart cart = Cart.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Cart cart = Cart.getInstance();
         String action = request.getParameter("action");
         String productID = request.getParameter("productID");
         String page = request.getParameter("page");
         User user = (User)session.getAttribute("user");
+
         if(user == null){
             response.sendRedirect("login.jsp");
             return;
         }
-        if (action == null) {
 
+        if ("remove".equals(action)) {
+            cart.removeFromCart(productID);
+            updateCart(request,response);
         }
         else if (action.equals("add")) {
             try {
@@ -49,15 +51,19 @@ public class CartController extends HttpServlet {
                 throw new RuntimeException(e);
             }
 
-
         } else if (action.equals("show")) {
-            Collection list = (Collection) cart.getProductList();
-            session.setAttribute("productList", list);
-            session.setAttribute("cart", cart);
-            request.getRequestDispatcher("shopping-cart.jsp").forward(request, response);
+            updateCart(request,response);
         }
 
 
+    }
+
+    private void updateCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Collection list = (Collection) cart.getProductList();
+        session.setAttribute("productList", list);
+        session.setAttribute("cart", cart);
+        request.getRequestDispatcher("shopping-cart.jsp").forward(request, response);
     }
 
     @Override
