@@ -45,6 +45,17 @@ public class DAO {
         ps.execute();
         ps.close();
     }
+    public void addAccountforAdmin(String email, String password, String fullName,int role) throws SQLException {
+        if (UserService.emailExists(email)) return;
+        String query = "insert into account (Email,Password,role,FullName) values (?,?,?,?);";
+        ps = getPrepareStatement(query);
+        ps.setString(1, email);
+        ps.setString(2, password);
+        ps.setInt(3,role);
+        ps.setString(4, fullName);
+        ps.execute();
+        ps.close();
+    }
 
     public List<Category> loadCategory() {
 
@@ -68,6 +79,25 @@ public class DAO {
 
     }
 
+    public List<Product> getAllProduct() {
+        try {
+            List<Product> products = new ArrayList<>();
+            String sql = "SELECT * FROM PRODUCT";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(rs.getString("IDPRODUCT"),
+                        rs.getString("NAME_PRODUCT"), rs.getString("PRODUCT_IMG"),
+                        rs.getLong("PRICE"),
+                        rs.getString("DESCRIPTION"), rs.getString("NAMECATE"), rs.getString("IDCATE")));
+            }
+            return products;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public List<Product> getProductbyCategory(String id) {
         try {
             List<Product> products = new ArrayList<>();
@@ -80,7 +110,7 @@ public class DAO {
                 products.add(new Product(rs.getString("IDPRODUCT"),
                         rs.getString("NAME_PRODUCT"), rs.getString("PRODUCT_IMG"),
                         rs.getLong("PRICE"),
-                        rs.getString("DESCRIPTION"), rs.getString("NAMECATE"),rs.getString("IDCATE")));
+                        rs.getString("DESCRIPTION"), rs.getString("NAMECATE"), rs.getString("IDCATE")));
             }
             return products;
         } catch (SQLException e) {
@@ -101,7 +131,7 @@ public class DAO {
             while (rs.next()) {
                 return new Product(rs.getString("IDPRODUCT"), rs.getString("NAME_PRODUCT")
                         , rs.getString("PRODUCT_IMG"), rs.getLong("PRICE"), rs.getString("DESCRIPTION"),
-                        rs.getString("NAMECATE"),rs.getString("IDCATE"));
+                        rs.getString("NAMECATE"), rs.getString("IDCATE"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -142,7 +172,7 @@ public class DAO {
             while (rs.next()) {
                 products.add(new Product(rs.getString("IDPRODUCT"), rs.getString("NAMECATE")
                         , rs.getString("PRODUCT_IMG"), rs.getLong("PRICE"), rs.getString("DESCRIPTION")
-                        , rs.getString("NAMECATE"),rs.getString("IDCATE")));
+                        , rs.getString("NAMECATE"), rs.getString("IDCATE")));
             }
             return products;
         } catch (SQLException e) {
@@ -150,11 +180,187 @@ public class DAO {
         }
     }
 
+    public void DeleteProductbyID(String id) {
+        try {
+            String query = "DELETE from product where IDPRODUCT = ?";
+            connection = DBConnect.getInstance().getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setString(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void main(String[] args) {
         DAO dao = DAO.getInstance();
-        List<Product> products = dao.search("d",1);
-        for (Product p :products){
-            System.out.println(p);
+        User user = dao.getUserbyID(1);
+        System.out.println(user);
+    }
+
+    public void addProduct(String idProduct, String nameProduct, String idCategory, String nameCategory, String imgProduct, double price, String descProduct) {
+        try {
+            String query = "INSERT INTO PRODUCT(IDPRODUCT,NAME_PRODUCT,IDCATE,NAMECATE,PRODUCT_IMG,PRICE,PRODUCT.DESCRIPTION)" +
+                    "values(?,?,?,?,?,?,?)";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, idProduct);
+            ps.setString(2, nameProduct);
+            ps.setString(3, idCategory);
+            ps.setString(4, nameCategory);
+            ps.setString(5, imgProduct);
+            ps.setDouble(6, price);
+            ps.setString(7, descProduct);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
+
+    }
+
+    public void addCategory(String idCate, String nameCate, String imgCate, String desc) {
+        try {
+            String query = "INSERT INTO CATEGORY(IDCATE,NAMECATE,IMG_CATE,DESCRIPTION) values (?,?,?,?)";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, idCate);
+            ps.setString(2, nameCate);
+            ps.setString(3, imgCate);
+            ps.setString(4, desc);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void deleteCategorybyID(String id) {
+        try {
+            String query = "DELETE from CATEGORY where IDCATE = ?";
+            connection = DBConnect.getInstance().getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setString(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<User> getAllUser() {
+        try {
+            List<User> users = new ArrayList<>();
+            String query = "SELECT * FROM ACCOUNT";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = null;
+            ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                users.add(new User(rs.getInt("idAccount"), rs.getString("Email"),
+                        rs.getString("Password"), rs.getString("FullName"), rs.getInt("ROLE")));
+            }
+            return users;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void deleteUser(int id){
+        try {
+            String query = "DELETE from ACCOUNT where idAccount = ?";
+            connection = DBConnect.getInstance().getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public Category getCategorybyID(String id){
+        try {
+            String sql = "SELECT * FROM CATEGORY WHERE IDCATE = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = null;
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Category(rs.getString("IDCATE"),rs.getString("NAMECATE")
+                ,rs.getString("IMG_CATE"),rs.getString("DESCRIPTION"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+    public void editCategory(String id,String name, String img, String desc){
+        try {
+            String sql = "UPDATE CATEGORY set NAMECATE = ?,IMG_CATE = ?, DESCRIPTION = ? WHERE IDCATE = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1,name);
+            ps.setString(2,img);
+            ps.setString(3,desc);
+            ps.setString(4,id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+    public void editProduct(String nameProduct, String nameCategory, String imgProduct, double price, String descProduct,String idProduct) {
+        try {
+            String sql = "UPDATE PRODUCT set NAMECATE = ?,NAME_PRODUCT = " +
+                    "?, PRODUCT_IMG = ?,PRICE = ?, DESCRIPTION = ? WHERE IDPRODUCT = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1,nameCategory);
+            ps.setString(2,nameProduct);
+            ps.setString(3,imgProduct);
+            ps.setDouble(4,price);
+            ps.setString(5,descProduct);
+            ps.setString(6,idProduct);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public User getUserbyID(int id){
+        try {
+            String sql = "SELECT * FROM Account WHERE IDACCOUNT = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = null;
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                return new User(rs.getInt("IDACCOUNT"),rs.getString("EMAIL")
+                ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+            return null;
+    }
+    public void editUserbyId(int id,String fullName,String email,String password,int role){
+        try {
+            String query = "UPDATE ACCOUNT set Email = ?,Password = ?, ROLE = ?, FULLNAME = ? " +
+                    "where idAccount = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1,email);
+            ps.setString(2,password);
+            ps.setInt(3,role);
+            ps.setString(4,fullName);
+            ps.setInt(5,id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
