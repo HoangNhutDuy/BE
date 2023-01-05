@@ -1,7 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta content="text/html" charset="UTF-8">
 	<title>Quên mật khẩu</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -73,7 +76,7 @@
 	<div id="loader-wrapper"></div>
     <div id="page">
         <div class="container">
-            <form class="form-detail" action="#" method="post">
+            <form class="form-detail" action="/ForgotPasswordServlet" method="post">
                 <div class="logo"></div>
 				<div class="form-row">
                     <h1>Quên mật khẩu ?</h1>
@@ -81,7 +84,9 @@
 					<input type="email" name="email" id="email" class="input-text" placeholder="Email" required>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="continue-btn" value="Tiếp theo">
+
+						<input type="submit" name="register" class="continue-btn" value="Tiếp theo">
+
 				</div>
 			</form>
 		</div>

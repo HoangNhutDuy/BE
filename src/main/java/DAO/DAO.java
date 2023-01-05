@@ -363,4 +363,22 @@ public class DAO {
         }
 
     }
+
+    public User findByEmail (String email) {
+        try {
+            String query = "select * from account where Email = ?";
+            connection = DBConnect.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return new User(rs.getInt("IDACCOUNT"),rs.getString("EMAIL")
+                        ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"));
+            }
+
+        } catch (SQLException e)  {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }
