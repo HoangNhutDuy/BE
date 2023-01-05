@@ -17,18 +17,15 @@ import java.util.List;
 public class PhotoDetailControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        DAO dao = DAO.getInstance(); 
-
-        Cart cart = (Cart) request.getSession().getAttribute("cart");
+        String id = request.getParameter("productID");
+        DAO dao = DAO.getInstance();
         List<Category> categories = dao.loadCategory();
         Product product = dao.getProductbyId(id);
-        cart.addToCart(product);
 
         request.setAttribute("product", product);
         request.setAttribute("categories", categories);
 
-        String page = (String) request.getAttribute("page");
+        String page =  request.getParameter("page");
         if ("detail".equals(page)) {
             request.getRequestDispatcher("photo-detail.jsp").forward(request, response);
         } else if ("resultSearch".equals(page)) {

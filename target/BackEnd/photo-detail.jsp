@@ -107,7 +107,7 @@ https://templatemo.com/tm-556-catalog-z
                     </div>
                     <div class="sale">
                         <div class="to-buy">
-                            <button class="btn buy-btn">Mua</button>
+                            <button class="btn buy-btn"><a href="/CartController?productID=${product.id}&page=detail&action=add">Mua</a></button>
                         </div>
                         <div class="to-cart">
                             <button class="btn cart-btn"><a href="/PhotoDetailControl?id=${product.id}&page=detail">Thêm vào giỏ hàng</a></button>
@@ -119,7 +119,7 @@ https://templatemo.com/tm-556-catalog-z
                     <div>
                         <h3 class="tm-text-gray-dark mb-3">Tìm kiếm ảnh theo thẻ</h3>
                         <c:forEach var="c" items="${categories}">
-                            <a href="LoadProductControl?id=${c.idCate}" class="tm-text-primary mr-4 mb-2 d-inline-block">${c.name}</a>
+                            <a href="LoadProductControl?cateID=${c.idCate}" class="tm-text-primary mr-4 mb-2 d-inline-block">${c.name}</a>
                         </c:forEach>
                     </div>
                 </div>
