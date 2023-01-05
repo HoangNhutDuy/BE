@@ -24,6 +24,9 @@ public class UserService extends Services{
         }
         return null;
     }
+    public static User findUser(User user){
+        return findUser(user.getUsername(),user.getPassword());
+    }
     public static boolean emailExists(String email) throws SQLException {
         String query = "SELECT * from account where Email = ?";
         PreparedStatement ps;
