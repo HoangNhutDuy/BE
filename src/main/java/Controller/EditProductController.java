@@ -8,7 +8,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "EditProductControl", value = "/EditProductControl")
-public class EditProductControl extends HttpServlet {
+public class EditProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idProduct = request.getParameter("idProduct");

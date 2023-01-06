@@ -7,11 +7,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(value = "/SearchControl")
-public class SearchControl extends HttpServlet {
+@WebServlet(value = "/search")
+public class SearchController extends HttpServlet {
 
     private static final int PAGE_SIZE = 6;
     @Override
@@ -36,7 +35,6 @@ public class SearchControl extends HttpServlet {
         if (count % PAGE_SIZE != 0) {
             end++;
         }
-
         List<Product> products = dao.search(txtSearch, index);
         request.setAttribute("result", products);
         request.setAttribute("end", end);
@@ -44,7 +42,7 @@ public class SearchControl extends HttpServlet {
         request.getSession().setAttribute("index", paramIndex);
         request.getSession().setAttribute("txtSearch", txtSearch);
 
-        request.getRequestDispatcher("/ResultSearch.jsp").forward(request, response);
+        request.getRequestDispatcher("resultSearch.jsp").forward(request, response);
 
     }
 }

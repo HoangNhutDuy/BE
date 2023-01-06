@@ -12,16 +12,16 @@ import java.io.IOException;
 import java.util.List;
 
     @WebServlet(name = "AdminControl", value = "/AdminControl")
-public class AdminControl extends HttpServlet {
+public class AdminController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User u = (User) session.getAttribute("user");
         if(u == null){
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("/login");
         }
         else if(u != null && u.getRole() == 0){
-            response.sendRedirect("HomeControl");
+            response.sendRedirect("/home");
         }
         else{
             DAO dao = DAO.getInstance();

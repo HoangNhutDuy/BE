@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="main">
-        <form action="EditUserControl" method="get" class="form-control">
+        <form action="/EditUserControl" class="form-control">
             <h1>Thông tin người dùng</h1>
             <div class="product">
                 <label for="">Mã người dùng: </label>
@@ -24,7 +24,7 @@
             </div>
             <div class="product">
                 <label for="">Email: </label>
-                <input type="text" name="Email" value="${user.username}">
+                <input type="text" name="email" value="${user.username}">
             </div>
             <div class="product">
                 <label for="">Mật khẩu: </label>
@@ -33,10 +33,10 @@
             <div class="product">
                 <label for="">Quyền hạn: </label>
                 <c:if test="${user.role == 0}">
-                <input type="text" name="role" value="Người dùng">
+                <input type="text" name="role" value="0">
                 </c:if>
                     <c:if test="${user.role == 1}">
-                <input type="text" name="role" value="Quản lý">
+                <input type="text" name="role" value="1">
                     </c:if>
             </div>
             <div class="confirm">

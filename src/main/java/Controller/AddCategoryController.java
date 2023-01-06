@@ -7,17 +7,18 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "EditCategoryControl", value = "/EditCategoryControl")
-public class EditCategoryControl extends HttpServlet {
+@WebServlet(name = "AddCategoryControl", value = "/AddCategoryControl")
+public class AddCategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("idCate");
-        String name = request.getParameter("nameCate");
+        String idCate = request.getParameter("idCate");
+        String nameCate = request.getParameter("nameCate");
         String imgCate = request.getParameter("imgCate");
         String desc = request.getParameter("descCate");
         DAO dao = DAO.getInstance();
-        dao.editCategory(id,name,imgCate,desc);
-        request.setAttribute("message","Cập nhật thành công");
+        dao.addCategory(idCate,nameCate,imgCate,desc);
+
+        request.setAttribute("message","Thêm thành công");
         request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 

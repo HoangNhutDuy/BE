@@ -76,7 +76,7 @@
 <div id="loader-wrapper"></div>
 <div id="page">
 	<div class="container">
-		<form class="form-detail" action="/ForgotPasswordServlet" method="post">
+		<form class="form-detail" action="/forgotPassword" method="post">
 			<div class="logo"></div>
 			<div class="form-row">
 				<h1>Quên mật khẩu ?</h1>

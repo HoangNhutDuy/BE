@@ -62,7 +62,6 @@
         </div>
     </div>
     <footer id="footer" class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
-
     </footer>
     <script src="js/plugins.js"></script>
     <script src="js/header.jsp"></script>

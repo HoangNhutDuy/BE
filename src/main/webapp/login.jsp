@@ -38,9 +38,8 @@
 </style>
 </head>
 <body>
-	<div id="loader-wrapper">
+	<div id="loader-wrapper"></div>
 
-	</div>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-30 p-b-50">
@@ -48,7 +47,7 @@
 					Đăng nhập
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5"
-				action="/LoginControl" method="post" >
+				action="/login" method="post" >
 					<c:if test="${message != null}">
 						<h2 style="color: red">${message}</h2>
 					</c:if>
@@ -83,11 +82,9 @@
 							<a href="#"><img src="img/login-icons/gmail-register.png" alt="gmail-register"></a>
 						</div>
 					</div>
-
 					<div class="register_here">
-						<p>Chưa có tài khoản? Bạn có thể tạo tài khoản <a href="register.jsp" style="color: #0093E9; text-decoration: underline;">tại đây</a></p>
+						<p>Chưa có tài khoản? Bạn có thể tạo tài khoản <a href="registration.jsp" style="color: #0093E9; text-decoration: underline;">tại đây</a></p>
 					</div>
-					
 				</form>
 			</div>
 		</div>
