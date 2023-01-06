@@ -5,6 +5,8 @@ import Model.Product;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductService extends Services{
     public static Product findProduct(String id) throws SQLException {
@@ -23,8 +25,17 @@ public class ProductService extends Services{
         }
         return product;
     }
+    public static List<String> getAllIDProducts() throws SQLException {
+        List<String> list = new ArrayList<>();
+        PreparedStatement ps = dao.getPrepareStatement("select idproduct from product");
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
+            list.add(rs.getString("idproduct"));
+        }
+        return list;
+    }
 
     public static void main(String[] args) throws SQLException {
-        System.out.println(findProduct("10"));
+        System.out.println(ProductService.getAllIDProducts());
     }
 }
