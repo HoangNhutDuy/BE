@@ -47,7 +47,7 @@
                 <i class="fa-solid fa-user"></i>
                 <h3>Quản lý người dùng</h3>
             </a>
-            <a href="logOut">
+            <a href="LoginControl">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <h3>Đăng xuất</h3>
             </a>
@@ -58,6 +58,7 @@
             <h1 style="color:red"> ${message}</h1>
         </c:if>
     </div>
+</div>
     <script>
         const main = document.querySelector('.main');
         const category = document.querySelector('.category');
@@ -266,7 +267,7 @@
 
         })
         function addProduct() {
-            main.innerHTML = ` <form action="AddProductControl" method="get" class="form-control">
+            main.innerHTML = ` <form action="/AddProductControl" method="get" class="form-control">
                 <h1>Thông tin sản phẩm</h1>
                 <div class="product">
                     <label for="">Mã sản phẩm: </label>
@@ -304,7 +305,7 @@
             </form>`;
         }
         function addCategory(){
-            main.innerHTML = ` <form action="AddCategoryControl" method="get" class="form-control">
+            main.innerHTML = ` <form action="/AddCategoryControl" method="get" class="form-control">
                 <h1>Thông tin sản phẩm</h1>
                 <div class="product">
                     <label for="">Mã danh mục: </label>
@@ -332,7 +333,7 @@
         function addAccount(){
 
             main.innerHTML = `
-<form action="AddAccountControl" method="get" class="form-control">
+<form action="/AddAccountControl" method="get" class="form-control">
                 <h1>Thông tin người dùng</h1>
                 <div class="product">
                     <label for="">Mã người dùng: </label>
