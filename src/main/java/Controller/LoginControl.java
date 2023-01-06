@@ -37,10 +37,16 @@ public class LoginControl extends HttpServlet {
         if(messages.isEmpty()) {
             User user = UserService.findUser(email,password);
             if (user != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user",user);
-                session.setAttribute("cart", Cart.getInstance());
-                response.sendRedirect("HomeControl");
+                if (user.getRole() == 0){
+
+                    HttpSession session = request.getSession();
+                    session.setAttribute("user",user);
+                    session.setAttribute("cart", Cart.getInstance());
+                    response.sendRedirect("HomeControl");
+                } else {
+                    request.getRequestDispatcher("admin/admin.jsp").forward(request, response);
+                }
+
             } else {
                 request.setAttribute("message","Sai tài khoản hoặc mật khẩu");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
