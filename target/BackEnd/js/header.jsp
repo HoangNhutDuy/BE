@@ -46,7 +46,7 @@ headerWeb.innerHTML = `
                         <a class="nav-link" href="logOut">Đăng xuất</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-8" href="wishlist.jsp"><i class="fa-solid fa-heart"></i></a>
+                        <a class="nav-link nav-link-8" href="/WishlistController"><i class="fa-solid fa-heart"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-7" href="/CartController?action=show"><i

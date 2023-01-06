@@ -46,7 +46,7 @@
             </div>
             <div class="card_footer">
                 <div class="card_date">
-                    <p>Ngày hết hạn</p>
+                    <p style="color: #333; font-size: 1.2rem; font-weight: 600">Ngày hết hạn</p>
                     <input type="text" placeholder="Ngày/Tháng/Năm" id="card_date">
                     <span class="card_date_span"></span>
                     <small></small>

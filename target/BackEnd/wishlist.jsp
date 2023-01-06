@@ -17,8 +17,6 @@
 </head>
 <body>
     <div id="loader-wrapper">
-
-
     </div>
     <header id="header"></header>
     <div class="container">
@@ -42,26 +40,6 @@
                         <td>
                             <div class="img_product">
                                 <img src="img/clocks/clock1.jpg" alt="">
-                            </div>
-                        </td>
-                        <td>CL001</td>
-                        <td>Đồng hồ mini</td>
-                        <td>50000VND</td>
-                        <td>
-                            <div class="action">
-                                <button>
-                                    Thêm vào giỏ hàng
-                                </button>
-                                <button>
-                                    Xóa
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="img_product">
-                                <img src="img/clocks/clock1.jpg" alt="">
 
                             </div>
                         </td>
@@ -71,73 +49,10 @@
                         <td>
                             <div class="action">
                                 <button>
-                                    Thêm vào giỏ hàng
+                                    <a style="text-decoration: none; color: #eee">Thêm vào giỏ hàng</a>
                                 </button>
                                 <button>
-                                    Xóa
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="img_product">
-                                <img src="img/clocks/clock1.jpg" alt="">
-
-                            </div>
-                        </td>
-                        <td>CL001</td>
-                        <td>Đồng hồ mini</td>
-                        <td>50000VND</td>
-                        <td>
-                            <div class="action">
-                                <button>
-                                    Thêm vào giỏ hàng
-                                </button>
-                                <button>
-                                    Xóa
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="img_product">
-                                <img src="img/clocks/clock1.jpg" alt="">
-
-                            </div>
-                        </td>
-                        <td>CL001</td>
-                        <td>Đồng hồ mini</td>
-                        <td>50000VND</td>
-                        <td>
-                            <div class="action">
-                                <button>
-                                    Thêm vào giỏ hàng
-                                </button>
-                                <button>
-                                    Xóa
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="img_product">
-                                <img src="img/clocks/clock1.jpg" alt="">
-
-                            </div>
-                        </td>
-                        <td>CL001</td>
-                        <td>Đồng hồ mini</td>
-                        <td>50000VND</td>
-                        <td>
-                            <div class="action">
-                                <button>
-                                    Thêm vào giỏ hàng
-                                </button>
-                                <button>
-                                    Xóa
+                                    <a style="text-decoration: none; color: #eee">Xóa</a>
                                 </button>
                             </div>
                         </td>
