@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="main">
-        <form action="EditProductControl" method="get" class="form-control">
+        <form action="/EditProductControl" method="get" class="form-control">
             <h1>Thông tin danh mục</h1>
             <div class="product">
                 <label for="">Mã sản phẩm: </label>
