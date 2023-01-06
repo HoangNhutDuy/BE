@@ -10,8 +10,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "RegisterController", value = "/registerControl")
-public class RegisterController extends HttpServlet {
+@WebServlet(name = "RegisterController", value = "/registration")
+public class RegistrationController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -23,7 +23,7 @@ public class RegisterController extends HttpServlet {
         try {
             if (UserService.emailExists(email)) {
                 request.setAttribute("message", "Email đã tồn tại");
-                request.getRequestDispatcher("register.jsp").forward(request, response);
+                request.getRequestDispatcher("registration.jsp").forward(request, response);
             } else {
                 String fullName = request.getParameter("full-name");
                 String password = request.getParameter("password");

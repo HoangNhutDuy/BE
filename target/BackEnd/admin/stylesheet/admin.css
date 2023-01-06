@@ -88,7 +88,7 @@ aside {
     font-weight: bold;
     align-items: center;
     margin-left: 2rem;
-    transform: all 300ms ease;
+    /*transform: all 300ms ease;*/
     height: 3rem;
     outline: none;
 }
@@ -117,7 +117,7 @@ aside {
 }
 
 .container .sidebar a:active::before i {
-    margin-left: calc(1rem- 0.5rem);
+    /*margin-left: calc(1rem- 0.5rem);*/
 }
 
 .container .sidebar a:hover i {

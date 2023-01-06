@@ -17,7 +17,7 @@
 <div class="container">
     <aside>
         <div class="top">
-            <a class="navbar-brand" href="/HomeControl">
+            <a class="navbar-brand" href="/home">
                 <i class="fas fa-film mr-2"></i>
                 Catalog-Z
             </a>
@@ -26,7 +26,7 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
                          alt="">
                 </div>
-                <h3>Người quản lý</h3>
+                <h3>Quản lí</h3>
             </div>
         </div>
         <div class="sidebar">
@@ -47,7 +47,7 @@
                 <i class="fa-solid fa-user"></i>
                 <h3>Quản lý người dùng</h3>
             </a>
-            <a href="logOut">
+            <a href="/logOut">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <h3>Đăng xuất</h3>
             </a>

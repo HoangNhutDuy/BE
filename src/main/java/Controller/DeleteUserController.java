@@ -1,22 +1,22 @@
 package Controller;
 
 import DAO.DAO;
-import Model.Category;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "LoadCatebyID", value = "/LoadCatebyID")
-public class LoadCatebyID extends HttpServlet {
+@WebServlet(name = "DeleteUser", value = "/DeleteUser")
+public class DeleteUserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String idString = request.getParameter("id");
+        int id = Integer.parseInt(idString);
         DAO dao = DAO.getInstance();
-        String id = request.getParameter("id");
-        Category category = dao.getCategorybyID(id);
-        request.setAttribute("cate",category);
-        request.getRequestDispatcher("admin/editCategory.jsp").forward(request,response);
+        dao.deleteUser(id);
+        request.setAttribute("message","Xóa thành công");
+        request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 
     @Override

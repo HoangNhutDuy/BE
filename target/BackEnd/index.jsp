@@ -1,3 +1,6 @@
+<%@ page import="Model.Category" %>
+<%@ page import="DAO.DAO" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -30,7 +33,7 @@ https://templatemo.com/tm-556-catalog-z
 
 
     <div class="tm-hero d-flex justify-content-center align-items-center"  data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form" action="SearchControl?index=1" method="post">
+        <form class="d-flex tm-search-form" action="/search?index=1" method="post">
             <input name="txtSearch" class="form-control tm-search-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
@@ -50,17 +53,18 @@ https://templatemo.com/tm-556-catalog-z
             </div>
         </div>
         <div class="row tm-mb-90 tm-gallery">
-        	<c:forEach var="o" items ="${listC}">
+            <%!List<Category> cateList = DAO.getInstance().loadCategory();%>
+            <%for(Category c : cateList){%>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img style="width: 314px; height: 210px" src="${o.img}" alt="Image" class="img-fluid">
+                    <img style="width: 314px; height: 210px" src="<%=c.getImg()%>" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>${o.name}</h2>
-                        <a href="LoadProductControl?cateID=${o.idCate}">View more</a>
+                        <h2><%=c.getName()%></h2>
+                        <a href="/loadProducts?cateID=<%=c.getIdCate()%>">View more</a>
                     </figcaption>
                 </figure>
             </div>
-            </c:forEach>
+            <%}%>
         </div> <!-- row -->
         <div class="row tm-mb-90">
             <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">

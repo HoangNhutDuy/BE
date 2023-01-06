@@ -63,7 +63,7 @@ https://templatemo.com/tm-556-catalog-z
 <header id="header"></header>
 
     <div class="tm-hero d-flex justify-content-center align-items-center"  data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form" action="SearchControl?index=1" method="post">
+        <form class="d-flex tm-search-form" action="/search?index=1" method="post">
             <input name="txtSearch" class="form-control tm-search-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
@@ -107,10 +107,9 @@ https://templatemo.com/tm-556-catalog-z
                     </div>
                     <div class="sale">
                         <div class="to-buy">
-                            <button class="btn buy-btn"><a style="text-decoration: none; color: #eee" href="/CartController?productID=${product.id}&page=detail&action=add">Mua</a></button>
-                        </div>
+                            <button class="btn buy-btn"><a style="text-decoration: none; color: #eee" href="/cart?productID=${product.id}&page=detail&action=add">Mua</a></button></div>
                         <div class="to-cart">
-                            <button class="btn cart-btn"><a style="text-decoration: none; color: #eee" href="/CartController?productID=${product.id}&page=detail&action=add">Thêm vào giỏ hàng</a></button>
+                            <button class="btn cart-btn"><a style="text-decoration: none; color: #eee" href="/cart?productID=${product.id}&page=detail&action=add">Thêm vào giỏ hàng</a></button>
                         </div>
                     </div>
                     <div id="text-center">
@@ -119,7 +118,7 @@ https://templatemo.com/tm-556-catalog-z
                     <div>
                         <h3 class="tm-text-gray-dark mb-3">Tìm kiếm ảnh theo thẻ</h3>
                         <c:forEach var="c" items="${categories}">
-                            <a href="LoadProductControl?cateID=${c.idCate}" class="tm-text-primary mr-4 mb-2 d-inline-block">${c.name}</a>
+                            <a href="/loadProducts?cateID=${c.idCate}" class="tm-text-primary mr-4 mb-2 d-inline-block">${c.name}</a>
                         </c:forEach>
                     </div>
                 </div>
@@ -137,7 +136,7 @@ https://templatemo.com/tm-556-catalog-z
                     <img src="${c.img}" style="width: 314px; height: 210px" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>${c.name}</h2>
-                        <a href="LoadProductControl?id=${c.idCate}">View more</a>
+                        <a href="/loadProducts?id=${c.idCate}">View more</a>
                     </figcaption>                    
                 </figure>
             </div>

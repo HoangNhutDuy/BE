@@ -7,15 +7,17 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "DeleteUser", value = "/DeleteUser")
-public class DeleteUser extends HttpServlet {
+@WebServlet(name = "EditCategoryControl", value = "/EditCategoryControl")
+public class EditCategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idString = request.getParameter("id");
-        int id = Integer.parseInt(idString);
+        String id = request.getParameter("idCate");
+        String name = request.getParameter("nameCate");
+        String imgCate = request.getParameter("imgCate");
+        String desc = request.getParameter("descCate");
         DAO dao = DAO.getInstance();
-        dao.deleteUser(id);
-        request.setAttribute("message","Xóa thành công");
+        dao.editCategory(id,name,imgCate,desc);
+        request.setAttribute("message","Cập nhật thành công");
         request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 

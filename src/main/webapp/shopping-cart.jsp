@@ -4,7 +4,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,23 +15,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/shopping-cart.css">
-
 </head>
-
 <body>
     <div id="loader-wrapper">
         <div id="loader"></div>
-
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-
     </div>
     <header id="header"></header>
     <div class="container">
         <div class="cart_page">
             <table class="table-product">
-                <tr><th>Sản phẩm</th><th>Giá tiền</th></tr>
-
+                <tr><th>Sản phẩm</th><th>Thể loại</th><th>Giá tiền</th></tr>
                 <c:forEach var="product" items="${productList}">
                 <tr>
                     <td>
@@ -44,9 +38,12 @@
                                 <p><c:out value="${product.getNameCate()}"/></p>
                                 <small>Giá: <c:out value="${product.getPrice()}"/> VND</small>
                                 <br>
-                                <a href="/CartController?action=remove&productID=${product.id}" class="remove">Xóa</a>
+                                <a href="/cart?action=remove&productID=${product.id}" class="remove">Xóa</a>
                             </div>
                         </div>
+                    </td>
+                    <td>
+                        <c:out value="${product.getNameCate()}"/>
                     </td>
                     <td>
                         <c:out value="${product.getPrice()}"/> VND
@@ -73,9 +70,8 @@
         </div>
         <div class="payment">
 
-            <button class="continue_buy_btn"><a style="text-decoration:  none; color: black" href="/HomeControl">Quay lại mua hàng</a></button>
-            <button class="payment_btn" type="submit"><a href="/CartController?action=pay">Thanh toán</a></button>
-
+            <button class="continue_buy_btn"><a style="text-decoration:  none; color: black" href="/home">Quay lại mua hàng</a></button>
+            <button class="payment_btn" type="submit"><a href="/cart?action=pay">Thanh toán</a></button>
         </div>
     </div>
     <footer id="footer" class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
