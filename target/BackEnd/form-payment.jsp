@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/form-payment.css">
 </head>
-
 <body>
     <div id="loader-wrapper"></div>
     <div class="container">
@@ -50,15 +48,12 @@
                     <input type="text" placeholder="Ngày/Tháng/Năm" id="card_date">
                     <span class="card_date_span"></span>
                     <small></small>
-
                 </div>
                 <div class="card_cvc">
                     <p>CVC</p>
                     <input type="text" placeholder="123" id="card_cvc">
                     <span class="card_cvc_span"></span>
                     <small></small>
-
-
                 </div>
             </div>
             <div class="pay">
@@ -97,7 +92,6 @@
                     </c:forEach>
                     </tbody>
                 </table>
-
             </div>
             <div class="total_price">
                 <p>Tổng thành tiền</p>
@@ -105,7 +99,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/header.jsp"></script>
         <script src="js/footer.jsp"></script>
         <script src="js/loader.js"></script>
@@ -219,6 +212,4 @@
             })
         </script>
 </body>
-
-
 </html>

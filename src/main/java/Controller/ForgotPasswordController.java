@@ -10,8 +10,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ForgotPasswordServlet", value = "/ForgotPasswordServlet")
-public class ForgotPasswordServlet extends HttpServlet {
+@WebServlet(name = "ForgotPasswordServlet", value = "/forgotPassword")
+public class ForgotPasswordController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        doPost(request,response);

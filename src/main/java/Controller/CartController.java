@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
 
-@WebServlet(name = "CartController", value = "/CartController")
+@WebServlet(name = "CartController", value = "/cart")
 public class CartController extends HttpServlet {
     Cart cart = Cart.getInstance();
 
@@ -44,9 +44,9 @@ public class CartController extends HttpServlet {
                 }
 
                 if ("gallery".equals(page) || "detail".equals(page)) {
-                    request.getRequestDispatcher("/LoadProductControl").forward(request, response);
+                    request.getRequestDispatcher("/loadProducts").forward(request, response);
                 } else if ("resultSearch".equals(page)) {
-                    request.getRequestDispatcher("/SearchControl").forward(request, response);
+                    request.getRequestDispatcher("/search").forward(request, response);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);

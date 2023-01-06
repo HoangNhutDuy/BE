@@ -5,7 +5,7 @@ const headerWeb = document.querySelector("#header");
 headerWeb.innerHTML = `
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="HomeControl">
+        <a class="navbar-brand" href="/home">
             <i class="fas fa-film mr-2"></i>
             Catalog-Z
         </a>
@@ -16,7 +16,7 @@ headerWeb.innerHTML = `
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-1 active" aria-current="page" href="HomeControl">Hình ảnh</a>
+                    <a class="nav-link nav-link-1 active" aria-current="page" href="/home">Hình ảnh</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-3" href="about.html">Thông tin</a>
@@ -28,10 +28,10 @@ headerWeb.innerHTML = `
                 <c:if test="${sessionScope.user == null}">
 
                     <li class="nav-item">
-                        <button class="nav-link nav-link-5"><a href="login.jsp">Đăng nhập</a></button>
+                        <button class="nav-link nav-link-5"><a href="/login">Đăng nhập</a></button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link nav-link-6"><a href="register.jsp">Đăng ký</a></button>
+                        <button class="nav-link nav-link-6"><a href="registration.jsp">Đăng ký</a></button>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.user != null}">
@@ -46,10 +46,10 @@ headerWeb.innerHTML = `
                         <a class="nav-link" href="logOut">Đăng xuất</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-8" href="/WishlistController"><i class="fa-solid fa-heart"></i></a>
+                        <a class="nav-link nav-link-8" href="/wishlist"><i class="fa-solid fa-heart"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-7" href="/CartController?action=show"><i
+                        <a class="nav-link nav-link-7" href="/cart?action=show"><i
                                 class="fa-solid fa-cart-shopping"></i></a>
                     </li>
                 </c:if>

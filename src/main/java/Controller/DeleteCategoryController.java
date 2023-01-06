@@ -7,18 +7,14 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AddCategoryControl", value = "/AddCategoryControl")
-public class AddCategoryControl extends HttpServlet {
+@WebServlet(name = "DeleteCategory", value = "/DeleteCategory")
+public class DeleteCategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idCate = request.getParameter("idCate");
-        String nameCate = request.getParameter("nameCate");
-        String imgCate = request.getParameter("imgCate");
-        String desc = request.getParameter("descCate");
+        String idCate = request.getParameter("id");
         DAO dao = DAO.getInstance();
-        dao.addCategory(idCate,nameCate,imgCate,desc);
-
-        request.setAttribute("message","Thêm thành công");
+        dao.deleteCategorybyID(idCate);
+        request.setAttribute("message","Xóa thành công");
         request.getRequestDispatcher("AdminControl").forward(request,response);
     }
 
