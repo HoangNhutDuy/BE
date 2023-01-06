@@ -104,7 +104,9 @@
                 <p>${cart.getAfterTaxes()}VND</p>
             </div>
         </div>
-        <script src="js/header.jsp"></script>
+    </div>
+
+    <script src="js/header.jsp"></script>
         <script src="js/footer.jsp"></script>
         <script src="js/loader.js"></script>
         <script src="js/plugins.js"></script>
