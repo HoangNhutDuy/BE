@@ -1,3 +1,6 @@
+<%@ page import="services.RandomTextService" %>
+<%@ page import="Model.Category" %>
+<%@ page import="DAO.DAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -10,7 +13,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/stylesheet/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +52,6 @@
                 <i class="fa-solid fa-user"></i>
                 <h3>Quản lý người dùng</h3>
             </a>
-
             <a href="/logOut">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <h3>Đăng xuất</h3>
@@ -59,7 +63,6 @@
             <h1 style="color:red"> ${message}</h1>
         </c:if>
     </div>
-</div>
     <script>
         const main = document.querySelector('.main');
         const category = document.querySelector('.category');
@@ -268,23 +271,23 @@
 
         })
         function addProduct() {
-            main.innerHTML = ` <form action="/AddProductControl" method="get" class="form-control">
+            main.innerHTML = ` <form action="AddProductControl" method="get" class="form-control">
                 <h1>Thông tin sản phẩm</h1>
                 <div class="product">
                     <label for="">Mã sản phẩm: </label>
-                    <input type="text" name="idProduct">
+                    <input type="text" name="idProduct" value="<%=RandomTextService.nextRandom(6)%>" readonly>
                 </div>
                 <div class="product">
                     <label for="">Tên sản phẩm: </label>
                     <input type="text" name="nameProduct">
                 </div>
                 <div class="product">
-                    <label for="">Mã danh mục: </label>
-                    <input type="text" name="idCategory">
-                </div>
-                <div class="product">
-                    <label for="">Tên danh mục: </label>
-                    <input type="text" name="nameCategory">
+                    <label for="nameCategory">Tên danh mục: </label>
+                    <select name="nameCategory" id="nameCategory">
+                    <%for(Category c :DAO.getInstance().loadCategory()){%>
+                    <option><%=c.getName()%></option>
+                    <%}%>
+                    </select>
                 </div>
                 <div class="product">
                     <label for="">Ảnh: </label>
@@ -294,7 +297,7 @@
 
                 <div class="product">
                     <label for="">Giá: </label>
-                    <input type="text" name="price">
+                    <input type="" name="price">
                 </div>
                 <div class="product">
                     <label for="">Mô tả: </label>
@@ -306,7 +309,7 @@
             </form>`;
         }
         function addCategory(){
-            main.innerHTML = ` <form action="/AddCategoryControl" method="get" class="form-control">
+            main.innerHTML = ` <form action="AddCategoryControl" method="get" class="form-control">
                 <h1>Thông tin sản phẩm</h1>
                 <div class="product">
                     <label for="">Mã danh mục: </label>
@@ -334,7 +337,7 @@
         function addAccount(){
 
             main.innerHTML = `
-<form action="/AddAccountControl" method="get" class="form-control">
+<form action="AddAccountControl" method="get" class="form-control">
                 <h1>Thông tin người dùng</h1>
                 <div class="product">
                     <label for="">Mã người dùng: </label>

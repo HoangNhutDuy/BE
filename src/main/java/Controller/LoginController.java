@@ -21,16 +21,16 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        HttpSession session = request.getSession();
 
         User user = UserService.findUser(email, password);
         if (user != null) {
+            session.setAttribute("user", user);
+            session.setAttribute("cart", Cart.getInstance());
             if (user.getRole() == 0) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
-                session.setAttribute("cart", Cart.getInstance());
                 response.sendRedirect("/home");
             } else {
-                request.getRequestDispatcher("admin/admin.jsp").forward(request, response);
+                response.sendRedirect("/AdminControl");
             }
 
         } else {

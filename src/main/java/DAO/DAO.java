@@ -233,6 +233,16 @@ public class DAO {
         }
 
     }
+    public String getCategoryID(String cateName) throws SQLException {
+        String name = "";
+        String query = "SELECT IDCATE FROM CATEGORY where NAMECATE = ?";
+        ps = connection.prepareStatement(query);
+        ps.setString(1, cateName);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()) name = rs.getString("IDCATE");
+
+        return name;
+    }
 
     public void deleteCategorybyID(String id) {
         try {

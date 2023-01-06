@@ -160,11 +160,15 @@ aside {
     font-weight: bold;
 }
 
-.product input {
+.product input,
+.product select{
     width: 65%;
     padding: 0.2rem 0.5rem;
     outline: none;
     font-size: 1.0rem;
+}
+.product select {
+    width: 67%;
 }
 
 .confirm {
