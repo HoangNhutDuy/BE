@@ -89,12 +89,12 @@
                 <h1>Thông tin của admin</h1>
                 <div class="product">
                     <label for="">Tên: </label>
-                    <input type="text" value="Hoàng Nhựt Duy" readonly>
+                    <input type="text" value="${user.fullName}" readonly>
                 </div>
 
                 <div class="product">
                     <label for="">Email: </label>
-                    <input type="email" value="20130238@st.hcmuaf.edu.vn" readonly>
+                    <input type="email" value="${user.username}" readonly>
                 </div>
                 <div class="gender_input">
                     <label for="">Giới tính: </label>
@@ -120,12 +120,12 @@
                 <h1>Thông tin của admin</h1>
                 <div class="product">
                     <label for="">Tên: </label>
-                    <input type="text" value="Hoàng Nhựt Duy" readonly>
+                    <input type="text" value="${user.fullName}" readonly>
                 </div>
 
                 <div class="product">
                     <label for="">Email: </label>
-                    <input type="email" value="20130238@st.hcmuaf.edu.vn" readonly>
+                    <input type="email" value="${user.username}" readonly>
                 </div>
                 <div class="gender_input">
                     <label for="">Giới tính: </label>

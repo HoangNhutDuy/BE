@@ -33,6 +33,7 @@ public class AdminController extends HttpServlet {
             request.setAttribute("products",products);
             request.setAttribute("categories",categories);
             request.setAttribute("users",users);
+            request.setAttribute("user",u);
             request.getRequestDispatcher("admin/admin.jsp").forward(request,response);
         }
 
