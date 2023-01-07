@@ -35,7 +35,6 @@
             </div>
         </div>
         <div class="sidebar">
-
             <a href="#" class="homepage">
                 <i class="fa-sharp fa-solid fa-house"></i>
                 <h3>Trang chủ</h3>
@@ -139,7 +138,7 @@
                 </div>
                 <div class="product">
                     <label for="">Ngày sinh: </label>
-                    <input type="text"value="03/04/2002" readonly>
+                    <input type="text"value="${user.birthday}" readonly>
                 </div>
 
             </form>`
@@ -169,9 +168,10 @@
                             </td>
 
                             <td>
-                                <a href="DeleteCategory?id=${c.idCate}">Xóa</a>
+                                <a style="color: red" href="DeleteCategory?id=${c.idCate}">Xóa</a>
                                      <br>
-                             <a href="LoadCatebyID?id=${c.idCate}">Chỉnh sửa </a>
+                                     <br>
+                             <a style="color: green" href="LoadCatebyID?id=${c.idCate}">Chỉnh sửa </a>
                             </td>
                         </tr>
                     </tbody>
@@ -214,9 +214,10 @@
                             <td> Quản lý </td>
                             </c:if>
                             <td>
-                                <a href="DeleteUser?id=${u.id}">Xóa</a>
+                                <a style="color: red" href="DeleteUser?id=${u.id}">Xóa</a>
                                      <br>
-                                <a href="LoadUserbyID?id=${u.id}">Chỉnh sửa </a>
+                                     <br>
+                                <a style="color: green" href="LoadUserbyID?id=${u.id}">Chỉnh sửa </a>
                             </td>
                         </tr>
                     </tbody>
@@ -254,9 +255,10 @@
                             </td>
 
                             <td>
-                                <a href="DeleteProduct?id=${p.id}">Xóa</a>
+                                <a style="color: red" href="DeleteProduct?id=${p.id}">Xóa</a>
                                 <br>
-                                <a href="LoadProductbyID?id=${p.id}">Chỉnh sửa</a>
+                                <br>
+                                <a  style="color: green" href="LoadProductbyID?id=${p.id}">Chỉnh sửa</a>
                             </td>
                         </tr>
                     </tbody>
@@ -275,7 +277,7 @@
                 <h1>Thông tin sản phẩm</h1>
                 <div class="product">
                     <label for="">Mã sản phẩm: </label>
-                    <input type="text" name="idProduct" value="<%=RandomTextService.nextRandom(6)%>" readonly>
+                    <input type="text" name="idProduct" value="<%=RandomTextService.nextRandom()%>" readonly>
                 </div>
                 <div class="product">
                     <label for="">Tên sản phẩm: </label>

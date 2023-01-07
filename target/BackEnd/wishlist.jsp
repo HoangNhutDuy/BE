@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,16 +36,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                <c:forEach var="w" items="${wishlist}">
                     <tr>
                         <td>
                             <div class="img_product">
-                                <img src="img/clocks/clock1.jpg" alt="">
-
+                                <img src="${w.img}" alt="">
                             </div>
                         </td>
-                        <td>CL001</td>
-                        <td>Đồng hồ mini</td>
-                        <td>50000VND</td>
+                        <td>${w.idCate}</td>
+                        <td>${w.name}</td>
+                        <td>${w.price}VND</td>
                         <td>
                             <div class="action">
                                 <button>
@@ -57,6 +57,7 @@
                             </div>
                         </td>
                     </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

@@ -10,6 +10,7 @@
     <meta http-equiv="refresh" content="text/html"  charset="UTF-8">
 
     <title>Catalog-Z</title>
+    <link rel="icon" href="https://t4.ftcdn.net/jpg/04/96/47/13/360_F_496471319_DbtjoUvKqyy2e9OfgBnK5mm2AXhKpa9m.jpg"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
