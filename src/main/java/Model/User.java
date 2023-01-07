@@ -6,13 +6,15 @@ public class User {
     private String password;
     private String fullName;
     private int role;
+    private String birthday;
 
-    public User(int id, String username, String password, String fullName, int role) {
+    public User(int id, String username, String password, String fullName, int role,String birthday) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.role = role;
+        this.birthday = birthday;
     }
 
     public User(){
@@ -59,14 +61,11 @@ public class User {
         this.role = role;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", role=" + role +
-                '}';
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }

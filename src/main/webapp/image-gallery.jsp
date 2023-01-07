@@ -36,8 +36,8 @@
                 <img src="${o.img}" alt="" class="product_img">
                 <div class="product_header">
                     <button><a href="/photoDetails?productID=${o.id}&page=detail" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
-                    <button class="heart"><i class="fa-regular fa-heart"></i></button>
-                    <button><a style="text-decoration: none; color: black" href="/cart?productID=${o.id}&page=gallery&action=add"><i class="fa-solid fa-plus"></i></a></button>
+                    <button class="heart"><a style="text-decoration: none; color: inherit" href="/wishlist?productID=${o.id}&action=add&page=gallery"><i class="fa-regular fa-heart"></i></a></button>
+                    <button><a style="text-decoration: none; color: black" href="/cart?produnctID=${o.id}&page=gallery&action=add"><i class="fa-solid fa-plus"></i></a></button>
                 </div>
             </div>
         </c:forEach>

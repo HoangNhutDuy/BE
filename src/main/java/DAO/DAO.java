@@ -266,7 +266,7 @@ public class DAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 users.add(new User(rs.getInt("idAccount"), rs.getString("Email"),
-                        rs.getString("Password"), rs.getString("FullName"), rs.getInt("ROLE")));
+                        rs.getString("Password"), rs.getString("FullName"), rs.getInt("ROLE"),rs.getString("birthday")));
             }
             return users;
 
@@ -348,7 +348,7 @@ public class DAO {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 return new User(rs.getInt("IDACCOUNT"),rs.getString("EMAIL")
-                ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"));
+                ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"),rs.getString("birthday"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -383,7 +383,7 @@ public class DAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 return new User(rs.getInt("IDACCOUNT"),rs.getString("EMAIL")
-                        ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"));
+                        ,rs.getString("PASSWORD"),rs.getString("FULLNAME"),rs.getInt("ROLE"),rs.getString("birthday"));
             }
 
         } catch (SQLException e)  {
