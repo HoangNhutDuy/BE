@@ -60,42 +60,43 @@
 </div>
 
 <footer id="footer" class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer"></footer>
-    <script src="js/plugins.js"></script>
-    <script src="js/header.jsp"></script>
-    <script src="js/footer.jsp"></script>
-    <script src="js/loader.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        $(window).on("load", function () {
-            $('body').addClass('loaded');
-        });
-    </script>
-    <script>
-        var hearts = document.querySelectorAll('.heart');
-        var productsImg = document.querySelectorAll('.product_img')
-        var products = document.querySelectorAll('.product');
-        var viewmore = document.querySelector('.view-more-btn')
-        hearts.forEach(heart => {
-            heart.addEventListener('click', function () {
-                heart.classList.toggle('like');
-            })
+<script src="js/plugins.js"></script>
+<script src="js/header.jsp"></script>
+<script src="js/footer.jsp"></script>
+<script src="js/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(window).on("load", function () {
+        $('body').addClass('loaded');
+    });
+</script>
+<script>
+    var hearts = document.querySelectorAll('.heart');
+    var productsImg = document.querySelectorAll('.product_img')
+    var products = document.querySelectorAll('.product');
+    var viewmore = document.querySelector('.view-more-btn')
+    hearts.forEach(heart => {
+        heart.addEventListener('click', function () {
+            heart.classList.toggle('like');
         })
+    })
 
-        function render(start) {
-            for (let i = start - 6; i < start; i++) {
-                products[i].style.display = 'inline-block';
-            }
+    function render(start) {
+        for (let i = start - 6; i < start; i++) {
+            products[i].style.display = 'inline-block';
         }
+    }
 
-        render(<%=currentItem%>);
-        viewmore.onclick = function () {
+    render(<%=currentItem%>);
+    viewmore.onclick = function () {
+        if (<%=list.size()%> >=
+        <%=currentItem%>)
+        {
             <%currentItem+=6;%>
             render(<%=currentItem%>);
-            if(<%=currentItem%> >= <%=list.size()%>){
-                document.getElementById("vmb").style.display = "none";
-            }
         }
-    </script>
+    }
+</script>
 </body>
 
 </html>

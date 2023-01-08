@@ -32,6 +32,9 @@ public class Wishlist {
         for (Product p : wishList.values())
             System.out.println(p);
     }
+    public int getQuantity() {
+        return wishList.size();
+    }
 
     public void removeFromWishList(String id) {
         wishList.remove(id);
