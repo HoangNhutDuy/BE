@@ -2,6 +2,8 @@ package services;
 
 import Model.Units;
 
+import java.util.Random;
+
 public class DisplayService extends Services {
 
     public static String toVND(long amount) {
@@ -20,7 +22,14 @@ public class DisplayService extends Services {
         }
         return builder.toString();
     }
-
+    public static String randomLikes(){
+        Random rd = new Random();
+        return numberFormat(rd.nextLong(100000));
+    }
+    public static String randomDownloads(){
+        Random rd = new Random();
+        return numberFormat(rd.nextLong(10000000));
+    }
     public static void main(String[] args) {
         long i = 1234562278;
         System.out.println(toVND(i));

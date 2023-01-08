@@ -1,3 +1,10 @@
+<%@ page import="Model.Cart" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="Model.Product" %>
+<%@ page import="Model.User" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,14 +32,18 @@
         <div class="img_check">
             <img src="img/check.png.png" alt="">
         </div>
+        <% Cart cart = Cart.getInstance();
+            Collection<Product> products = cart.getProductList();
+            User user = (User) request.getSession().getAttribute("user");
+        %>
         <h1>Thanh toán thành công</h1>
         <div class="product_info">
             <p>Tên người dùng :</p>
-            <p>Hoàng Nhựt Duy</p>
+            <p><%=user.getFullName()%></p>
         </div>
         <div class="product_info">
             <p>Tổng cộng : </p>
-            <p>250000VND</p>
+            <p><%=cart.getDisplayAfterTaxes()%></p>
         </div>
         <div class="back">
             <button class="back-btn">
@@ -53,7 +64,7 @@
     <script>
         var backButton = document.querySelector('.back-btn')
         backButton.addEventListener('click', function(){
-            window.location.href = 'image-gallery.html'
+            window.location.href = '/home'
         })
     </script>
 </body>

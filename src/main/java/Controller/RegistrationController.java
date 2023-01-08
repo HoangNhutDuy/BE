@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class RegistrationController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 
     @Override

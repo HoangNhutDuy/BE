@@ -32,6 +32,7 @@
             text-decoration: none;
             color:rgb(25, 59, 179);
             font-weight: 700;
+            cursor: pointer;
         }
         a:hover {
             color: red;
@@ -44,7 +45,7 @@
             <img src="img/check.png.png" alt="image error">
             <h2>Gửi mật khẩu thành công</h2>
             <p>Người dùng vui lòng kiểm tra email</p>
-            <p>Quay lại trang đăng nhập <a>tại đây</a></p>
+            <p>Quay lại trang đăng nhập <a href="/login">tại đây</a></p>
         </div>
     </div>
 </body>

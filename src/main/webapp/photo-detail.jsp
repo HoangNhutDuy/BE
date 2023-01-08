@@ -1,3 +1,5 @@
+<%@ page import="services.RandomTextService" %>
+<%@ page import="services.DisplayService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -89,12 +91,12 @@ https://templatemo.com/tm-556-catalog-z
                         <div class="favorite">
                             <i class="fa-solid fa-heart" style="cursor: pointer;"></i>
                             <span>lượt yêu thích</span>
-                            <span class="tm-text-primary">: 2,710</span>
+                            <span class="tm-text-primary">: <%=DisplayService.randomLikes()%></span>
                         </div>
                         <div class="download">
                             <i class="fa-solid fa-download"></i>
                             <span> lượt tải xuống </span>
-                            <span class="tm-text-primary">: 75,532 </span>
+                            <span class="tm-text-primary">: <%=DisplayService.randomDownloads()%> </span>
                         </div>
                     </div>
                     <div class="mb-4 d-flex flex-wrap">
