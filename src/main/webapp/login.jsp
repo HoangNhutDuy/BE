@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V16</title>
+    <title>Đăng nhập</title>
     <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>

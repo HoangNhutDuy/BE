@@ -20,7 +20,7 @@
 <%--  <link rel="stylesheet" href="../css/style.css">--%>
 <%--  <link rel="stylesheet" href="../css/company.css">--%>
 <%--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">--%>
-  <title>Document</title>
+  <title>Trang người dùng</title>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="../jquery-ui-1.13.0.custom/jquery-ui.js"></script>
   <script src="mainUser.js"></script>
