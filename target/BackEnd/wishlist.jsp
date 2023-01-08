@@ -52,7 +52,7 @@
                                     <a style="text-decoration: none; color: #eee" href="/cart?action=add&page=wishlist&productID=${w.id}">Thêm vào giỏ hàng</a>
                                 </button>
                                 <button>
-                                    <a style="text-decoration: none; color: #eee" href="">Xóa</a>
+                                    <a style="text-decoration: none; color: #eee" href="/wishlist?action=remove&page=wishlist&productID=${w.id}">Xóa</a>
                                 </button>
                             </div>
                         </td>

@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -85,7 +84,7 @@
                             </td>
                             <td>
                                 <div class="product_price">
-                                    <p>${p.price}VND</p>
+                                    <p>${p.getDisplayPrice()}</p>
                                 </div>
                             </td>
                         </tr>
@@ -95,7 +94,7 @@
             </div>
             <div class="total_price">
                 <p>Tổng thành tiền</p>
-                <p>${cart.getAfterTaxes()}VND</p>
+                <p>${cart.getDisplayAfterTaxes()}</p>
             </div>
         </div>
     </div>
@@ -207,7 +206,7 @@
                 // console.log(isNumber)
                 console.log(isDateFormat)
                 if (!isEmptyError && isDateFormat && isNumber) {
-                    window.location.href = 'paysuccess.html'
+                    window.location.href = '/payment?action=pay'
                 }
             })
         </script>

@@ -22,8 +22,9 @@ public class WishlistController extends HttpServlet {
             request.setAttribute("wishlist", list.getProductList());
             String action = request.getParameter("action");
             String page = request.getParameter("page");
+            String productID = null;
+            productID = request.getParameter("productID");
             if ("add".equals(action)) {
-                String productID = request.getParameter("productID");
                 try {
                     Product product = ProductService.findProduct(productID);
                     list.addToWishList(product);
@@ -37,8 +38,10 @@ public class WishlistController extends HttpServlet {
                 else if ("wishlist".equals(page)) {
                     request.getRequestDispatcher("/wishlist.jsp").forward(request, response);
                 }
+            } else if ("remove".equals(action)) {
+                list.removeFromWishList(productID);
+                request.getRequestDispatcher("/wishlist.jsp").forward(request, response);
             } else {
-
                 request.getRequestDispatcher("wishlist.jsp").forward(request, response);
             }
 
