@@ -6,7 +6,7 @@ footer.innerHTML = `  <div class="container-fluid tm-container-small">
 <div class="row">
     <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
         <h3 class="tm-text-primary mb-4 tm-footer-title">Thông tin về Catalog-Z</h3>
-        <p>Catalog-Z mang đến cho bạn những bức ảnh sắc nét nhất. Chúng tôi thêm hơn 100.000 hình ảnh mới mỗi ngày, lấy nguồn từ các nhiếp ảnh gia và cơ quan ảnh ở 173 quốc gia.</p>
+        <p>Catalog-Z mang đến cho bạn những bức ảnh sắc nét nhất. Chúng tôi thêm hơn 10.000 hình ảnh mới mỗi ngày, lấy nguồn từ các nhiếp ảnh gia và cơ quan ảnh ở 173 quốc gia.</p>
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
         <h3 class="tm-text-primary mb-4 tm-footer-title">Đường dẫn</h3>
@@ -31,7 +31,7 @@ footer.innerHTML = `  <div class="container-fluid tm-container-small">
 <div class="line" style="border-bottom: solid 1px #999; margin: 2.3rem;"></div>
 <div class="row">
     <div class="col-lg-8 col-md-7 col-12 px-5 mb-3">
-        Bản quyền 2020 của Catalog-Z Company. Đã đăng ký bản quyền.
+        Bản quyền 2023 của Catalog-Z Company. Đã đăng ký bản quyền.
     </div>
     <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
         

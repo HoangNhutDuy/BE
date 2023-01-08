@@ -17,7 +17,6 @@ public class AdminController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User u = (User) session.getAttribute("user");
-        System.out.println(u);
         if(u == null){
             response.sendRedirect("/login");
         }
@@ -25,7 +24,6 @@ public class AdminController extends HttpServlet {
             response.sendRedirect("/home");
         }
         else{
-            System.out.println("haha");
             DAO dao = DAO.getInstance();
             List<Product> products = dao.getAllProduct();
             List<Category> categories = dao.loadCategory();

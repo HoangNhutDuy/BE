@@ -19,7 +19,7 @@ public class WishlistController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if ((User) request.getSession().getAttribute("user") != null) {
             Wishlist list = (Wishlist) request.getSession().getAttribute("wishlist");
-            request.setAttribute("wishlist",list.getProductList());
+            request.setAttribute("wishlist", list.getProductList());
             String action = request.getParameter("action");
             String page = request.getParameter("page");
             if ("add".equals(action)) {
@@ -32,10 +32,13 @@ public class WishlistController extends HttpServlet {
                 }
                 if ("gallery".equals(page))
                     request.getRequestDispatcher("/loadProducts").forward(request, response);
-                else
+                else if ("resultSearch".equals(page))
                     request.getRequestDispatcher("/search").forward(request, response);
-
+                else if ("wishlist".equals(page)) {
+                    request.getRequestDispatcher("/wishlist.jsp").forward(request, response);
+                }
             } else {
+
                 request.getRequestDispatcher("wishlist.jsp").forward(request, response);
             }
 

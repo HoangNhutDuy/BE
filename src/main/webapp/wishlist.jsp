@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                 <c:forEach var="w" items="${wishlist}">
-                    <tr>
+                    <tr style="margin-bottom: 16px">
                         <td>
                             <div class="img_product">
                                 <img src="${w.img}" alt="">
@@ -49,10 +49,10 @@
                         <td>
                             <div class="action">
                                 <button>
-                                    <a style="text-decoration: none; color: #eee">Thêm vào giỏ hàng</a>
+                                    <a style="text-decoration: none; color: #eee" href="/cart?action=add&page=wishlist&productID=${w.id}">Thêm vào giỏ hàng</a>
                                 </button>
                                 <button>
-                                    <a style="text-decoration: none; color: #eee">Xóa</a>
+                                    <a style="text-decoration: none; color: #eee" href="">Xóa</a>
                                 </button>
                             </div>
                         </td>
