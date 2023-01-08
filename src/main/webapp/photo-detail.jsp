@@ -109,7 +109,7 @@ https://templatemo.com/tm-556-catalog-z
                     </div>
                     <div class="sale">
                         <div class="to-buy">
-                            <button class="btn buy-btn"><a style="text-decoration: none; color: #eee" href="/cart?productID=${product.id}&page=detail&action=add">Mua</a></button></div>
+                            <button class="btn buy-btn"><a style="text-decoration: none; color: #eee" href="/wishlist?productID=${product.id}&page=detail&action=add">Yêu thích</a></button></div>
                         <div class="to-cart">
                             <button class="btn cart-btn"><a style="text-decoration: none; color: #eee" href="/cart?productID=${product.id}&page=detail&action=add">Thêm vào giỏ hàng</a></button>
                         </div>

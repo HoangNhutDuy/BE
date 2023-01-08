@@ -18,9 +18,12 @@ public class RegistrationController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("your-email");
+        System.out.println("1");
+        if(email == null) request.getRequestDispatcher("/registration.jsp").forward(request,response);
         try {
+            System.out.println(2);
             if (UserService.emailExists(email)) {
                 request.setAttribute("message", "Email đã tồn tại");
                 request.getRequestDispatcher("registration.jsp").forward(request, response);

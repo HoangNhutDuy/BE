@@ -54,6 +54,9 @@ public class Cart {
     public long getTax() {
         return (long) (getTotalPrice() * TAX);
     }
+    public String getDisplayPriceTax(){
+        return DisplayService.toVND(getTax());
+    }
 
     public long getAfterTaxes() {
         return getTotalPrice() + getTax();

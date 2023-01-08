@@ -12,8 +12,9 @@ public class PaymentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        String from = request.getParameter("cart");
         if("pay".equals(action)){
-            request.getRequestDispatcher("/pay-success.jsp").forward(request,response);
+                request.getRequestDispatcher("/pay-success.jsp").forward(request,response);
         }
     }
 

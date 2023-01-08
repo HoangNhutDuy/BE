@@ -93,6 +93,10 @@
                 </table>
             </div>
             <div class="total_price">
+                <p>Tổng tiền thuế:</p>
+                <p>${cart.getDisplayPriceTax()}</p>
+            </div>
+            <div class="total_price">
                 <p>Tổng thành tiền</p>
                 <p>${cart.getDisplayAfterTaxes()}</p>
             </div>
