@@ -22,7 +22,7 @@
 <div class="container">
     <aside>
         <div class="top">
-            <a class="navbar-brand" href="/home">
+            <a class="navbar-brand" href="#">
                 <i class="fas fa-film mr-2"></i>
                 Catalog-Z
             </a>

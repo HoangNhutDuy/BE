@@ -1,5 +1,7 @@
 package Model;
 
+import services.DisplayService;
+
 import java.util.*;
 
 public class Cart {
@@ -28,14 +30,21 @@ public class Cart {
         if (cart.containsKey(p.getId())) return;
         cart.put(p.getId(), p);
     }
-
+    public String getDisplayTotalPrice(){
+        return DisplayService.toVND(this.getTotalPrice());
+    }
     public long getTotalPrice() {
         totalPrice = 0L;
         for (Product p : cart.values())
             totalPrice += p.getPrice();
         return totalPrice;
     }
-
+    public String getDisplayTax(){
+        return DisplayService.toPercents(TAX);
+    }
+    public String getDisplayAfterTaxes(){
+        return DisplayService.toVND(getAfterTaxes());
+    }
     public long getTax() {
         return (long) (getTotalPrice() * TAX);
     }
@@ -78,7 +87,6 @@ public class Cart {
         cart.addToCart(p3);
         cart.addToCart(p4);
         cart.addToCart(p5);
-        System.out.println(cart.getTotalPrice());
         cart.showCart();
     }
 
