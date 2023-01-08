@@ -35,9 +35,9 @@
         <div class="product">
             <img src="${p.img}" alt="" class="product_img">
             <div class="product_header">
-                <button><a href="/photoDetails?productID=${p.id}&page=detail" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
-                <button class="heart"><a href="/wishlist?action=add&productID=${p.id}&page=resultSearch"><i class="fa-regular fa-heart"></i></a></button>
-                <button><a style="text-decoration: none; color: black" href="/cart?action=add&productID=${p.id}&page=resultSearch"><i class="fa-solid fa-plus"></i></a></button>
+                <button title="xem ảnh chi tiết"><a href="/photoDetails?productID=${p.id}&page=detail" style="color: black"><i class="fa-solid fa-eye"></i></a></button>
+                <button title="thêm vào mục yêu thích" class="heart"><a href="/wishlist?action=add&productID=${p.id}&page=resultSearch"><i class="fa-regular fa-heart"></i></a></button>
+                <button title="thêm ảnh vào giỏ hàng"><a style="text-decoration: none; color: black" href="/cart?action=add&productID=${p.id}&page=resultSearch"><i class="fa-solid fa-plus"></i></a></button>
             </div>
         </div>
         </c:forEach>

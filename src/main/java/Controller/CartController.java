@@ -29,7 +29,7 @@ public class CartController extends HttpServlet {
         User user = (User) session.getAttribute("user");
 
         if (user == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("/login");
             return;
         }
 
@@ -47,6 +47,9 @@ public class CartController extends HttpServlet {
                     request.getRequestDispatcher("/loadProducts").forward(request, response);
                 } else if ("resultSearch".equals(page)) {
                     request.getRequestDispatcher("/search").forward(request, response);
+                }
+                else if("wishlist".equals(page)){
+                    request.getRequestDispatcher("/wishlist").forward(request, response);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);

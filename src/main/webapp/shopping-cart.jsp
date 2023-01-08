@@ -26,14 +26,14 @@
 <div class="container">
     <div class="cart_page">
         <table class="table-product">
-            <tr>
+            <thead>
                 <th>Sản phẩm</th>
                 <th>Thể loại</th>
                 <th>Giá tiền</th>
                 <th>Tác vụ</th>
-            </tr>
+            </thead>
             <c:forEach var="product" items="${productList}">
-                <tr>
+                <tr style="margin-bottom: 8px">
                     <td>
                         <div class="product_details">
                             <div class="product_img">
@@ -51,7 +51,7 @@
                                 href="/cart?action=remove&productID=${product.id}" class="remove">Xóa</a></button>
                     </td>
                 </tr>
-<%--                <tr style=""></tr>--%>
+                <tr style="border-bottom: solid #888 1px; padding-top: 8px"></tr>
             </c:forEach>
         </table>
     </div>

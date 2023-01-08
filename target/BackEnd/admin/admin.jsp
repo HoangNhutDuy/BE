@@ -2,7 +2,7 @@
 <%@ page import="Model.Category" %>
 <%@ page import="DAO.DAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Play&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play&family=Poppins:wght@300;400&family=Roboto&display=swap"
+          rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Play&family=Poppins:wght@300;400&family=Roboto&display=swap');
+
+        * {
+            font-family: 'Play', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
 </head>
 
 <body>
@@ -31,7 +42,8 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
                          alt="">
                 </div>
-                <h3>Quản lí: <br> ${user.fullName} </h3>
+                <div style="margin-left: 1rem"><h3 style="text-align: center">Quản lý</h3>
+                    <p style="text-align: center"> ${user.fullName}</p></div>
             </div>
         </div>
         <div class="sidebar">
@@ -82,6 +94,7 @@
                 parts[i].classList.add('active');
             })
         }
+
         function render() {
             main.innerHTML = `
             <form action="" class="form-control">
@@ -107,12 +120,13 @@
                 </div>
                 <div class="product">
                     <label for="">Ngày sinh: </label>
-                    <input type="text"value="03/04/2002" readonly>
+                    <input type="textx"value="${user.birthday}" readonly>
                 </div>
 
             </form>`
         }
-        // render();
+
+        render();
         homepage.addEventListener('click', function () {
             main.innerHTML = `
             <form action="" class="form-control">
@@ -143,12 +157,13 @@
 
             </form>`
         })
+
         category.addEventListener('click', () => {
             main.innerHTML = ` <div class="container_table">
                 <table>
                     <thead>
                         <tr>
-
+                        <th>Số thứ tự</th>
                             <th>Mã danh mục</th>
                             <th>Tên danh mục</th>
                             <th>Ảnh</th>
@@ -156,10 +171,11 @@
                             <th>Tác vụ</th>
                         </tr>
                     </thead>
+                    <%! int j = 0;%>
                         <c:forEach var="c" items="${categories}">
                     <tbody>
                         <tr>
-
+                               <td><%=j++%></td>
                             <td>${c.idCate}</td>
                             <td>${c.name}</td>
                             <td>
@@ -184,12 +200,12 @@
 
         })
 
-        userManagement.addEventListener('click',function(){
+        userManagement.addEventListener('click', function () {
             main.innerHTML = ` <div class="container_table">
                 <table>
                     <thead>
                         <tr>
-
+                            <th>Số thứ tự</th>
                             <th>Mã người dùng</th>
                             <th>Tên người dùng</th>
                             <th>Ảnh</th>
@@ -197,10 +213,11 @@
                             <th>Tác vụ</th>
                         </tr>
                     </thead>
+                        <%! int k = 1;%>
                         <c:forEach var="u" items="${users}">
                     <tbody>
                         <tr>
-
+        <td><%=k++%></td>
                             <td>${u.id}</td>
                             <td>${u.fullName}</td>
                             <td>
@@ -235,25 +252,26 @@
                 <table>
                     <thead>
                         <tr>
-
+                            <th>Số thứ tự</th>
                             <th>Danh mục</th>
                             <th>Tên sản phẩm</th>
+                            <th>Giá bán</th>
                             <th>Ảnh</th>
                             <th>Tác vụ</th>
                         </tr>
-
                     </thead>
+                    <%! int i = 1;%>
                     <c:forEach var="p" items="${products}">
                     <tbody>
                         <tr>
-
+                        <td><%=i++%></td>
                             <td>${p.nameCate}</td>
                             <td>${p.name}</td>
+                            <td>${p.getDisplayPrice()}</td>
                             <td>
                            <img src="${p.img}"
                                     alt="">
                             </td>
-
                             <td>
                                 <a style="color: red" href="DeleteProduct?id=${p.id}">Xóa</a>
                                 <br>
@@ -272,6 +290,7 @@
             `
 
         })
+
         function addProduct() {
             main.innerHTML = ` <form action="AddProductControl" method="get" class="form-control">
                 <h1>Thông tin sản phẩm</h1>
@@ -310,7 +329,8 @@
                 </div>
             </form>`;
         }
-        function addCategory(){
+
+        function addCategory() {
             main.innerHTML = ` <form action="AddCategoryControl" method="get" class="form-control">
                 <h1>Thông tin sản phẩm</h1>
                 <div class="product">
@@ -336,7 +356,7 @@
 
         }
 
-        function addAccount(){
+        function addAccount() {
 
             main.innerHTML = `
 <form action="AddAccountControl" method="get" class="form-control">

@@ -16,7 +16,7 @@ headerWeb.innerHTML = `
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-1 active" aria-current="page" href="/home">Hình ảnh</a>
+                    <a class="nav-link nav-link-1 active" aria-current="page" href="/home" title="Quay về trang chính">Hình ảnh</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-3" href="about.html">Thông tin</a>
@@ -45,10 +45,10 @@ headerWeb.innerHTML = `
                     <li class="nav-item">
                         <a class="nav-link" href="../logOut">Đăng xuất</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" title="các sản phẩm đã yêu thích">
                         <a class="nav-link nav-link-8" href="/wishlist"><i class="fa-solid fa-heart"></i></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" title="giỏ hàng">
                         <a class="nav-link nav-link-7" href="/cart?action=show"><i
                                 class="fa-solid fa-cart-shopping"></i></a>
                     </li>

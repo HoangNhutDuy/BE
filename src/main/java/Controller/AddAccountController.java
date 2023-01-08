@@ -22,7 +22,7 @@ public class AddAccountController extends HttpServlet {
             String Email = request.getParameter("Email");
             String password =request.getParameter("password");
             String roleString = request.getParameter("role");
-            if("Quản lý".equalsIgnoreCase(roleString)){
+            if("1".equalsIgnoreCase(roleString)){
                 role = 1;
             }
             if(!UserService.emailExists(Email)){
