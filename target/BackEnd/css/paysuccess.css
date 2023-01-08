@@ -48,6 +48,10 @@ h6 {
     text-align: center;
     margin: 2rem 0;
 }
+.container{
+    margin-top: 8rem;
+    margin-bottom: 14rem;
+}
 .product_info{
     display: flex;
     justify-content: center;
