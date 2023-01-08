@@ -36,14 +36,14 @@ headerWeb.innerHTML = `
                 </c:if>
                 <c:if test="${sessionScope.user != null}">
                     <li class="nav-item">
-                        <a class="nav-link nav-link-4" href="#"> <img  style="width: 30px; height:30px; object-fit: cover; border-radius: 50%;" src="https://png.pngtree.com/element_our/20190604/ourmid/pngtree-user-avatar-boy-image_1482937.jpg" alt="Image" class = "avatar"></a>
+                        <a class="nav-link nav-link-4" href="user1/user.jsp"> <img  style="width: 30px; height:30px; object-fit: cover; border-radius: 50%;" src="https://png.pngtree.com/element_our/20190604/ourmid/pngtree-user-avatar-boy-image_1482937.jpg" alt="Image" class = "avatar"></a>
 
                     </li>
                     <li class="nav-item">
                         <p class="nav-link"> ${sessionScope.user.fullName}</p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logOut">Đăng xuất</a>
+                        <a class="nav-link" href="../logOut">Đăng xuất</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-8" href="/wishlist"><i class="fa-solid fa-heart"></i></a>

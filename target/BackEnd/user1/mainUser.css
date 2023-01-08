@@ -1,0 +1,541 @@
+div.contentDiv{
+    width: 100%;
+    height: 500px;
+    margin: 20px 0 13px;
+    
+}
+/* left */
+div.leftContent{
+    float: left;
+    background-color: #3C4B64;
+    width: 20%;
+    height: 100%;
+    margin: 0 20px 0 0;
+}
+.contentDiv .account{
+    display: block;
+    width: 100%;
+    height: 90px;
+    padding-top: 15px;
+    margin-bottom: 50px;
+}
+.contentDiv img.avatar{
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 0 10px 0 10px;
+    object-fit: cover;
+    box-sizing: unset;
+}
+.contentDiv div.nameAccount{
+    float: right;
+    width: calc(100% - 91px);
+    height: 70px;
+}
+.contentDiv p.userName{
+    color: #B1B7C1;
+    font-size: 19px;
+    width: fit-content;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    margin: 0;
+}
+.contentDiv p.changeTop{
+    width: fit-content;
+    font-size: 15px;
+    color: rgb(156, 156, 156);
+    margin: 0;
+}
+.contentDiv div.navbody{
+    width: 100%;
+    height: calc(100% - 155px);
+    margin: 0;
+}
+.contentDiv div.item{
+    height: 28px;
+    padding-bottom: 20px;
+    box-sizing: unset;
+}
+.contentDiv img.itemIcon{
+    float: left;
+    padding: 0 20px;
+}
+.contentDiv div.item div{
+    float: left;
+    height: 100%;
+    width: fit-content;
+}
+.contentDiv p.itemContent{
+    /* line-height: 28px; */
+    color:  #B1B7C1;
+    margin: 0;
+}
+.contentDiv p.itemContent:hover{
+    color: #FFA400;
+    cursor: pointer;
+}
+.contentDiv p.changeTop:hover{
+    color: rgb(112, 112, 112);
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* right */
+.contentDiv div.rightContent{
+    display: block;
+    float: left;
+    background-color: rgb(226, 226, 226);
+    width: 77%;
+    height: 100%;
+    margin: 0 ;
+}
+.contentDiv #tabs .container{
+    width: calc(100% - 3.2rem);
+    padding-bottom: 30px;
+    margin: 30px 0 40px 0;
+    border-bottom: 10px solid #c5c5c5;
+}
+.contentDiv #tabs .container.last{
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.contentDiv #tabs .container .container_top{
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid rgb(221, 221, 221);
+}
+.contentDiv #tabs .container .container_top:hover{
+    cursor: pointer;
+    background-color: rgb(247, 247, 247);
+}
+.contentDiv #tabs .container img.anh_san_pham{
+    float: left;
+    width: 60px;
+    height: 60px;
+    padding-right: 20px;
+}
+.contentDiv #tabs .container .review_sp{
+    width: calc(100% - 100px);
+    height: 60px;
+    float: left;
+}
+.contentDiv #tabs .container .review_sp div{
+    float: left;
+    width: calc(100% - 150px);
+}
+.contentDiv #tabs .container .ten_san_pham{
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+.contentDiv #tabs .container .so_luong{
+    width: fit-content;
+    opacity: 50%;
+    margin: 5px 0 0 0;
+}
+.contentDiv #tabs .container .gia_tien{ 
+    opacity: 60%;
+    padding: 0;
+    float: right;
+}
+.contentDiv #tabs .container .container_bottom{
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+}
+.contentDiv #tabs .container .container_bottom div.thong_tin{
+    width: 100%;
+    float: left;
+}
+.contentDiv #tabs .container .container_bottom p.trang_thai{
+    width: 49%;
+    float: left;
+    color: rgb(0, 153, 255);
+    font-size: 16px;
+    font-weight: bold;
+}
+.contentDiv #tabs .container .container_bottom .tong_tien{
+    float: right;
+    width: 49%;
+    text-align: right;
+    font-size: 16px;
+}
+.contentDiv #tabs .container .container_bottom .tong_tien span.tien{
+    font-size: 20px;
+    color: #eb0028;
+    font-weight: bold;
+}
+.contentDiv #tabs .container .container_bottom .buttons{
+    width: fit-content;
+    float: right;
+}
+.contentDiv #tabs .container .container_bottom .buttons .mua_lai{
+    background-color: rgb(0, 147, 239);
+    color: aliceblue;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+}
+.contentDiv #tabs .container .container_bottom .buttons .phan_hoi{
+    background-color: #f2f2f2;
+    color: rgb(99, 99, 99);
+    width: 200px;
+    height: 50px;
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 5px;
+}
+.contentDiv #tabs .container .container_bottom .buttons .mua_lai:hover{
+    background-color: rgb(0, 126, 204);
+    cursor: pointer;
+}
+.contentDiv #tabs .container .container_bottom .buttons .phan_hoi:hover{
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+.contentDiv #tabs .container.empty{
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.contentDiv #tabs .container.empty p{
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    opacity: 60%;
+    padding-top: 100px;
+    margin: 0;
+}
+
+/* tài khoản */
+.contentDiv #tab1{
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+}
+.contentDiv #tab1 .top{
+    width: calc(100% - 50px);
+    margin: 30px auto 20px 30px;
+    border-bottom: 2px solid #d8d8d8;
+}
+.contentDiv #tab1 .top p:first-child{
+    font-weight: 300;
+    font-size: 23px;
+    color: #313131;
+    margin: 20px auto 5px 0;
+}
+.contentDiv #tab1 .top p:last-child{
+    font-weight: 80;
+    font-size: 14px;
+    color: #686868;
+    margin: 0 auto 20px 0;
+}
+.contentDiv #tab1 table{
+    width: 65%;
+    float: left;
+    border-right: 1px solid #c5c5c5;
+}
+.contentDiv #tab1 table tr{
+    height: 50px;
+}
+.contentDiv #tab1 table tr:last-child{
+    height: 70px;
+}
+.contentDiv #tab1 tr td:first-child{
+    width: 20%;
+    text-align: right;
+    padding-right: 20px;
+}
+.contentDiv #tab1 tr td:last-child{
+    width: 50%;
+}
+.contentDiv #tab1 table tr td label{
+    color: #727272;
+    font-size: 16px;
+}
+.contentDiv #tab1 table tr td input[type=text],
+.contentDiv #tab1 table tr td input[type=email],
+.contentDiv #tab1 table tr td input[type=tel]{
+    width: 90%;
+    padding: 10px 7px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #c5c5c5;
+}
+.contentDiv #tab1 table tr td input[type=radio]:hover{
+    cursor: pointer;
+}
+.contentDiv #tab1 table tr td label[for=gt]{
+    color: black;
+}
+.contentDiv #tab1 table tr td input[type=submit]{
+    float: left;
+    width: 70px;
+    height: 35px;
+    font-size: 16px;
+    color: #f2f2f2;
+    background-color: rgb(0, 147, 239);
+    border: none;
+    border-radius: 4px;
+}
+.contentDiv #tab1 table tr:last-child td:last-child{
+    display: flex;
+}
+.contentDiv #tab1 table tr td input[type=submit]:hover{
+    cursor: pointer;
+    background-color: rgb(17, 162, 252);
+}
+.contentDiv #tab1 table tr td #changePassBT{
+    float: left;
+    margin-left: 40px;
+    width: 120px;
+    border: 1px solid rgb(156, 156, 156);
+    color: rgb(83, 83, 83);
+    background-color: rgb(250, 250, 250);
+    border-radius: 4px;
+}
+.contentDiv #tab1 table tr td #changePassBT:hover{
+    cursor: pointer;
+    background-color: white;
+    color: rgb(126, 126, 126);
+}
+.contentDiv #tab1 .chooseAvatar{
+    float: left;
+    width: 35%;
+}
+.contentDiv #tab1 .chooseAvatar .avatar{
+    display: block;
+    float: none;
+    margin: 30px auto 20px auto;
+    width: 130px;
+    height: 130px;
+    
+}
+.contentDiv #tab1 .chooseAvatar input[type=file]{
+    display: none;
+}
+.contentDiv #tab1 .chooseAvatar .fileBT{
+    display: block;
+    width: 80px;
+    height: 30px;
+    margin: 0 auto auto auto;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 4px;
+    background-color: rgb(233, 233, 233);
+    color: #313131;
+}
+.contentDiv #tab1 .chooseAvatar .fileBT:hover{
+    cursor: pointer;
+    background-color: rgb(243, 243, 243);
+}
+
+
+/* đổi mật khẩu */
+.contentDiv #changePassTab{
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+}
+.contentDiv #changePassTab .container_top{
+    width: calc(100% - 50px);
+    margin: 30px auto 50px 30px;
+    border-bottom: 2px solid #d8d8d8;
+}
+.contentDiv #changePassTab .container_top p{
+    font-weight: 300;
+    font-size: 23px;
+    color: #313131;
+    margin: 20px auto 20px 0;
+}
+.contentDiv #changePassTab table{
+    width: 90%;
+    float: left;
+}
+.contentDiv #changePassTab table tr{
+    height: 50px;
+}
+.contentDiv #changePassTab table tr:last-child{
+    height: 70px;
+}
+.contentDiv #changePassTab tr td:first-child{
+    width: 20%;
+    text-align: right;
+    padding-right: 20px;
+}
+.contentDiv #changePassTab tr td:last-child{
+    width: 50%;
+}
+.contentDiv #changePassTab table tr td label{
+    color: #727272;
+    font-size: 16px;
+}
+.contentDiv #changePassTab table tr td input[type=password]{
+    width: 90%;
+    padding: 10px 7px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #c5c5c5;
+}
+.contentDiv #changePassTab table tr td input[type=submit]{
+    float: left;
+    width: 110px;
+    height: 35px;
+    font-size: 16px;
+    color: #f2f2f2;
+    background-color: rgb(0, 147, 239);
+    border: none;
+    border-radius: 4px;
+}
+.contentDiv #changePassTab table tr td input[type=submit]:hover{
+    cursor: pointer;
+    background-color: rgb(17, 162, 252);
+}
+.contentDiv #changePassTab table tr td #back{
+    float: left;
+    margin-left: 40px;
+    width: 120px;
+    height: 35px;
+    border: 1px solid rgb(156, 156, 156);
+    color: rgb(83, 83, 83);
+    background-color: rgb(250, 250, 250);
+    border-radius: 4px;
+}
+.contentDiv #changePassTab table tr td #back:hover{
+    cursor: pointer;
+    background-color: white;
+    color: rgb(126, 126, 126);
+}
+
+
+
+.contentDiv #tab3{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+}
+.contentDiv #tab3 .thong_bao_control{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: 7.5%;
+    border-bottom: 1px solid #c7c7c7;
+    background-color: white;
+}
+.contentDiv #tab3 .thong_bao_control button{
+    background-color: white;
+    padding: 3px 2px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 3px;
+    color: rgb(95, 95, 95);
+}
+.contentDiv #tab3 .thong_bao_control button:hover{
+    border-color: rgb(0, 147, 239);
+    color: rgb(0, 147, 239);
+    cursor: pointer;
+}
+.contentDiv #tab3 .thong_bao_control .delete:hover{
+    border-color: red;
+    color: red;
+}
+.contentDiv #tab3 .thong_bao_control .readed{
+    float: right;
+    margin: 6px 20px auto auto;
+}
+.contentDiv #tab3 .thong_bao_control .delete{
+    float: right;
+    margin: 6px 20px auto auto;
+}
+.contentDiv #tab3 .thong-bao-container{
+    overflow: auto;
+    width: 100%;
+    height: 92%;
+    margin: 0;
+    padding: 0;
+}
+.contentDiv #tab3 .thong_bao_div{
+    width: calc(100% - 20px);
+    height: 14%;
+    margin: 0;
+    padding: 10px 0 10px 20px;
+}
+.contentDiv #tab3 .thong_bao_div.unread{
+    background-color: rgb(0, 147, 239, 0.1);
+}
+.contentDiv #tab3 .thong_bao_div:hover{
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+.contentDiv #tab3 .thong_bao_div img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    padding-right: 20px;
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_content{
+    float: left;
+    width: 60%;
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_content .thong_bao_head{
+    font-size: 19px;
+    font-weight: 250;
+    color: #3f3f3f;
+    margin: 0;
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_content .thong_bao_chitiet{
+    font-size: 15px;
+    color: #8d8d8d;
+    margin: 7px auto auto 0;
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_content .thoi_gian{
+    font-size: 15px;
+    color: #8d8d8d;
+    margin: 0px auto auto 0;
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_bt{
+    float: right;
+    width: calc(40% - 140px);
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_bt button{
+    float: right;
+    background-color: #f2f2f2;
+    margin: 10px 30px auto auto;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 3px;
+    color: rgb(163, 163, 163);
+    padding: 5px 3px;
+}
+.contentDiv #tab3 .thong_bao_div .thong_bao_bt button:hover{
+    color: rgb(0, 147, 239);
+    border-color: rgb(0, 147, 239);
+    cursor: pointer;
+}
+
+.DangXuat{
+    margin: 25px;
+    float: left;
+    width: 150px;
+    height: 30px;
+    border: 1px solid rgb(156, 156, 156);
+    color: rgb(83, 83, 83);
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+
+}
+.DangXuat:hover{
+    cursor: pointer;
+    background-color: #f2f2f2;
+    color: red;
+    border-color: red;
+}
+

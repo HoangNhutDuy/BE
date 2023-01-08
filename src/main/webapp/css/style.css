@@ -1,10 +1,10 @@
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
 .nav-link-5, .nav-link-6{
     border: 1px solid #0C121C99;
     border-radius: 0.75rem;
