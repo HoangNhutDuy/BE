@@ -31,14 +31,14 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&usqp=CAU"
                          alt="">
                 </div>
-                <h3>Quản lí</h3>
+                <h3>Quản lí: <br> ${user.fullName} </h3>
             </div>
         </div>
         <div class="sidebar">
 
             <a href="#" class="homepage">
                 <i class="fa-sharp fa-solid fa-house"></i>
-                <h3>Trang chủ</h3>
+                <h3>Thông tin</h3>
             </a>
             <a href="#" class="category">
                 <i class="fa-solid fa-earth-americas"></i>
@@ -368,6 +368,7 @@
         }
 
     </script>
+</div>
 </body>
 
 </html>
