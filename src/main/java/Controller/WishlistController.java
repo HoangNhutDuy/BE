@@ -38,6 +38,7 @@ public class WishlistController extends HttpServlet {
                 else if ("wishlist".equals(page)) {
                     request.getRequestDispatcher("/wishlist.jsp").forward(request, response);
                 }
+
             } else if ("remove".equals(action)) {
                 list.removeFromWishList(productID);
                 request.getRequestDispatcher("/wishlist.jsp").forward(request, response);
