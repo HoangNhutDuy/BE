@@ -1,5 +1,7 @@
 package Model;
 
+import services.DisplayService;
+
 import java.io.Serializable;
 
 public class Product implements Serializable {
@@ -87,5 +89,8 @@ public class Product implements Serializable {
                 ", description='" + description + '\'' +
                 ", nameCate='" + nameCate + '\'' +
                 '}';
+    }
+    public String getDisplayPrice(){
+        return DisplayService.toVND(this.price);
     }
 }

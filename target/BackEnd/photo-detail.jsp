@@ -99,7 +99,7 @@ https://templatemo.com/tm-556-catalog-z
                     </div>
                     <div class="mb-4 d-flex flex-wrap">
                         <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark">Giá: </span><span class="tm-text-primary">${product.price}</span>
+                            <span class="tm-text-gray-dark">Giá: </span><span class="tm-text-primary">${product.getDisplayPrice()}</span>
                         </div>
                         <div class="mr-4 mb-2">
                             <span class="tm-text-gray-dark">Loại tệp: </span><span class="tm-text-primary">JPG</span>

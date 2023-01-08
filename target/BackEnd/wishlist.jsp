@@ -45,7 +45,7 @@
                         </td>
                         <td>${w.idCate}</td>
                         <td>${w.name}</td>
-                        <td>${w.price}VND</td>
+                        <td>${w.getDisplayPrice()}</td>
                         <td>
                             <div class="action">
                                 <button>

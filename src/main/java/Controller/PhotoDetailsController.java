@@ -3,6 +3,7 @@ package Controller;
 import DAO.DAO;
 import Model.Category;
 import Model.Product;
+import services.DisplayService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,10 +21,9 @@ public class PhotoDetailsController extends HttpServlet {
         DAO dao = DAO.getInstance();
         List<Category> categories = dao.loadCategory();
         Product product = dao.getProductbyId(id);
-
         request.setAttribute("product", product);
         request.setAttribute("categories", categories);
-
+        request.setAttribute("price", DisplayService.toVND(product.getPrice()));
         String page =  request.getParameter("page");
         if ("detail".equals(page)) {
             request.getRequestDispatcher("photo-detail.jsp").forward(request, response);
