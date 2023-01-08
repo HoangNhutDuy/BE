@@ -64,7 +64,7 @@
     <script>
         var backButton = document.querySelector('.back-btn')
         backButton.addEventListener('click', function(){
-            window.location.href = '/home'
+            window.location.href = 'image-gallery.html'
         })
     </script>
 </body>
