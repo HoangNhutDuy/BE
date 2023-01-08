@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" http-equiv="content-type" content="text/html">
-    <title>Form-v5 by Colorlib</title>
+    <title>Đăng ký</title>
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Font-->
